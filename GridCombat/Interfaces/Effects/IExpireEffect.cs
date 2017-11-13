@@ -2,5 +2,8 @@
 {
     interface IExpireEffect : IBaseEffect
     {
+        int Duration { get; set; }
+
+        void Expire();
     }
 }

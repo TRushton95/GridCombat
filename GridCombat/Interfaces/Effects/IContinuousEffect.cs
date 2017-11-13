@@ -2,5 +2,8 @@
 {
     interface IContinuousEffect : IBaseEffect
     {
+        int? Duration();
+
+        void Expire();
     }
 }
