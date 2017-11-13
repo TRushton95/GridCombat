@@ -2,7 +2,9 @@
 {
     #region Usings
 
+    using System.Collections.Generic;
     using Microsoft.Xna.Framework.Graphics;
+    using GridCombat.Abilities;
 
     #endregion
 
@@ -48,6 +50,12 @@
         }
 
         public int CurrentEnergy
+        {
+            get;
+            set;
+        }
+
+        public List<Ability> Abilities
         {
             get;
             set;
