@@ -1,0 +1,31 @@
+﻿--------------------
+ Ability Mechanism
+--------------------
+
+Abilities are constructed out of Effects, which are in turn built out of BaseEffects.
+
+A BaseEffect is designed to be an indivisible unit of work, it is not a class that will
+ever be used directly, but rather is intended to provide a single "thing" that happens
+during a spell cast. This will be simply be things like "deal x damage", "set invincible flag to true"
+or "spawn a unit". It does not concern itself with the concept of a turn, or any status effects.
+
+An Effect is where the concept of a turn comes into play. An effect is built out of a BaseEffect plus
+one or more extra pieces of information. This will often include something like a Duration and a Target,
+so a DamageBaseEffect could be triggered every turn for the Duration on the Target. This is where an
+icon may be applied and could be used as a status condition, as it holds all the information required
+to describe an effect. This is also where the "hooks" may need to be added at a later date*.
+
+An Ability is a single class that holds one or many Effects in whatever combition is desired. This
+class can define the behaviour of these Effects and create a fully fledged spell, including animations
+later on. For example, a heal over time effect could be combined with an instant heal effect. These
+are the classes that the user will directly invoke during the game.
+
+
+*Several hooks may be necessary on some or all of the effect classes. Hooks will be several methods
+such as "onExpire()" and "onDispel()". These hooks will be necessary on at least some of the effects
+to determine the behaviour under certain circumstances. For example, if a Curse Effect is applied that
+deals x damage per turn, but we also want this effect to instantly apply y damage if it is dispelled, 
+this cannot come in the form of a seperate effect as it is intrinsicly tied to the effect. These
+hooks allow "onDispel()" to be called by the effect that dispels the effect, this triggering the extra
+damage. This may need an interface added to particular types of effects to add these hooks, eg "IDispelable" 
+or "IExpereable".

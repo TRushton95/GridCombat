@@ -53,7 +53,7 @@
     <Compile Include="Actors\Tile.cs" />
     <Compile Include="Enums\TargetType.cs" />
     <Compile Include="Enums\TileType.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="GridCombatGame.cs" />
     <Compile Include="Interfaces\IAbilityTemplate.cs" />
     <Compile Include="Interfaces\IBaseEffect.cs" />
     <Compile Include="Program.cs" />
@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
