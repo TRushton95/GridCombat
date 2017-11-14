@@ -3,31 +3,23 @@
     #region Usings
 
     using GridCombat.Actors;
-    using GridCombat.Enums;
-    using GridCombat.Interfaces;
 
     #endregion
 
-    class HealBaseEffect : IBaseEffect
+    class InstantHealEffect
     {
-        #region Fields
-
-        private static readonly TargetType targetType = TargetType.Hero;
-
-        #endregion
-
         #region Constructors
 
-        public HealBaseEffect(int heal)
+        public InstantHealEffect(int value)
         {
-            this.Heal = heal;
+            this.Value = value;
         }
 
         #endregion
 
         #region Properties
 
-        public int Heal
+        public int Value
         {
             get;
             set;
@@ -39,10 +31,9 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            targetTile.Occuptant.Heal(this.Heal);
+            targetTile.Occuptant.Heal(this.Value);
         }
 
         #endregion
-
     }
 }

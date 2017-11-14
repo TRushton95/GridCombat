@@ -7,7 +7,7 @@
 
     #endregion
 
-    interface IEffect
+    interface IBaseEffect
     {
         void Execute(Hero caster, Tile targetTile);
     }

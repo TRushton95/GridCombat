@@ -3,31 +3,23 @@
     #region Usings
 
     using GridCombat.Actors;
-    using GridCombat.Enums;
-    using GridCombat.Interfaces;
 
     #endregion
 
-    class DamageBaseEffect : IBaseEffect
+    class InstantDamageEffect
     {
-        #region Fields
-
-        private static readonly TargetType targetType = TargetType.Hero;
-
-        #endregion
-
         #region Constructors
 
-        public DamageBaseEffect(int damage)
+        public InstantDamageEffect(int value)
         {
-            this.Damage = damage;
+            this.Value = value;
         }
 
         #endregion
 
         #region Properties
 
-        public int Damage
+        public int Value
         {
             get;
             set;
@@ -39,7 +31,7 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            targetTile.Occuptant.Damage(this.Damage);
+            targetTile.Occuptant.Damage(this.Value);
         }
 
         #endregion
