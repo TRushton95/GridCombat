@@ -45,6 +45,7 @@
     <Compile Include="Actors\BaseActor.cs" />
     <Compile Include="Actors\Hero.cs" />
     <Compile Include="Actors\Tile.cs" />
+    <Compile Include="Enums\TargetType.cs" />
     <Compile Include="Enums\TileType.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Interfaces\Effects\IBaseEffect.cs" />
@@ -52,8 +53,10 @@
     <Compile Include="Interfaces\Effects\IExpireEffect.cs" />
     <Compile Include="Interfaces\Effects\IInstantEffect.cs" />
     <Compile Include="Interfaces\Effects\ITickEffect.cs" />
+    <Compile Include="Interfaces\IAbilityTemplate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TargetValidatorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

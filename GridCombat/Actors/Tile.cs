@@ -33,6 +33,12 @@
             set;
         }
 
+        public Hero Occuptant
+        {
+            get;
+            set;
+        }
+
         #endregion
     }
 }
