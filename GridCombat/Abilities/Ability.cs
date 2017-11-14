@@ -5,7 +5,7 @@
     using System;
     using System.Collections.Generic;
     using GridCombat.Actors;
-    using GridCombat.Interfaces.Effects;
+    using GridCombat.Interfaces;
     using GridCombat.Enums;
     using GridCombat.Services;
 
@@ -61,7 +61,7 @@
             {
                 foreach(IBaseEffect effect in Effects)
                 {
-                    effect.Execute();
+                    effect.Execute(caster, targetTile);
                 }
             }
             catch (NullReferenceException ex)
