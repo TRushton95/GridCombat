@@ -69,5 +69,19 @@
         }
 
         #endregion
+
+        #region Methods
+
+        public void Damage(int damage)
+        {
+            this.CurrentHealth -= damage;
+        }
+
+        public void Heal(int heal)
+        {
+            this.CurrentHealth += heal;
+        }
+
+        #endregion
     }
 }
