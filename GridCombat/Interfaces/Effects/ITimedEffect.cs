@@ -1,6 +1,6 @@
 ﻿namespace GridCombat.Interfaces.Effects
 {
-    interface IExpireEffect : IBaseEffect
+    interface ITimedEffect : IBaseEffect
     {
         int Duration { get; set; }
 
