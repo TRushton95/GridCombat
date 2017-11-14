@@ -18,13 +18,14 @@
 
         #region Constructors
 
-        public Hero(int maxHealth, int maxEnergy, float posX, float posY, Texture2D texture)
+        public Hero(int maxHealth, int maxEnergy, float posX, float posY, int team, Texture2D texture)
             : base(diameter, diameter, posX, posY, texture)
         {
             this.MaxHealth = maxHealth;
             this.CurrentHealth = maxHealth;
             this.MaxEnergy = maxEnergy;
             this.CurrentEnergy = maxEnergy;
+            this.Team = team;
         }
 
         #endregion
@@ -50,6 +51,12 @@
         }
 
         public int CurrentEnergy
+        {
+            get;
+            set;
+        }
+
+        public int Team
         {
             get;
             set;

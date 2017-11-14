@@ -75,11 +75,25 @@
 
         private static bool ValidateEnemy(Hero caster, Tile targetTile)
         {
+            Hero occupant = targetTile.Occuptant;
+
+            if (occupant != null && (occupant.Team != caster.Team))
+            {
+                return true;
+            }
+
             return false;
         }
 
         private static bool ValidateAlly(Hero caster, Tile targetTile)
         {
+            Hero occupant = targetTile.Occuptant;
+
+            if (occupant != null && (occupant.Team == caster.Team))
+            {
+                return true;
+            }
+
             return false;
         }
     }
