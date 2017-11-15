@@ -3,10 +3,11 @@
     #region Usings
 
     using GridCombat.Actors;
+    using GridCombat.Interfaces;
 
     #endregion
 
-    class InstantHealEffect
+    class InstantHealEffect : IEffect
     {
         #region Constructors
 
@@ -31,7 +32,7 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            targetTile.Occuptant.Heal(this.Value);
+            BaseEffects.Heal(targetTile.Occuptant, Value);
         }
 
         #endregion

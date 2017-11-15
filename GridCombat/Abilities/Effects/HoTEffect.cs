@@ -3,24 +3,18 @@
     #region Usings
 
     using GridCombat.Actors;
+    using GridCombat.Interfaces;
 
     #endregion
 
-    class HoTEffect
+    class HoTEffect : IEffect
     {
-        #region Fields
-
-        private HealBaseEffect healBaseEffect;
-
-        #endregion
-
         #region Constructors
 
         public HoTEffect(int value, int duration)
         {
             this.Value = value;
             this.Duration = duration;
-            healBaseEffect = new HealBaseEffect(value);
         }
 
         #endregion
@@ -49,9 +43,16 @@
 
         #region Methods
 
+        public void Execute(Hero caster, Tile targetTile)
+        {
+            //Apply effect to target effect queue
+        }
+
         public void Tick()
         {
-            Target.Heal(this.Value);
+            BaseEffects.Heal(Target, Value);
+
+            Duration--;
         }
 
         #endregion

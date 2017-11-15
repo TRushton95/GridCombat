@@ -42,8 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Abilities\Ability.cs" />
-    <Compile Include="Abilities\BaseEffects\DamageBaseEffect.cs" />
-    <Compile Include="Abilities\BaseEffects\HealBaseEffect.cs" />
+    <Compile Include="Abilities\BaseEffects\BaseEffects.cs" />
     <Compile Include="Abilities\Effects\DoTEffect.cs" />
     <Compile Include="Abilities\Effects\HoTEffect.cs" />
     <Compile Include="Abilities\Effects\InstantDamageEffect.cs" />
@@ -55,7 +54,7 @@
     <Compile Include="Enums\TileType.cs" />
     <Compile Include="GridCombatGame.cs" />
     <Compile Include="Interfaces\IAbilityTemplate.cs" />
-    <Compile Include="Interfaces\IBaseEffect.cs" />
+    <Compile Include="Interfaces\IEffect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TargetValidatorService.cs" />

@@ -3,10 +3,11 @@
     #region Usings
 
     using GridCombat.Actors;
+    using GridCombat.Interfaces;
 
     #endregion
 
-    class InstantDamageEffect
+    class InstantDamageEffect : IEffect
     {
         #region Constructors
 
@@ -31,7 +32,7 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            targetTile.Occuptant.Damage(this.Value);
+            BaseEffects.Damage(targetTile.Occuptant, Value);
         }
 
         #endregion

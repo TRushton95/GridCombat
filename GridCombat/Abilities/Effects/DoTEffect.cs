@@ -3,24 +3,18 @@
     #region Usings
 
     using GridCombat.Actors;
+    using GridCombat.Interfaces;
 
     #endregion
 
-    class DoTEffect
+    class DoTEffect : IEffect
     {
-        #region Fields
-
-        private DamageBaseEffect damageBaseEffect;
-
-        #endregion
-
         #region Constructors
 
         public DoTEffect(int value, int duration)
         {
             this.Value = value;
             this.Duration = duration;
-            damageBaseEffect = new DamageBaseEffect(value);
         }
 
         #endregion
@@ -49,9 +43,16 @@
 
         #region Methods
 
+        public void Execute(Hero caster, Tile targetTile)
+        {
+            //Apply effect to target effect queue
+        }
+
         public void Tick()
         {
-            Target.Damage(this.Value);
+            BaseEffects.Damage(Target, Value);
+
+            Duration--;
         }
 
         #endregion

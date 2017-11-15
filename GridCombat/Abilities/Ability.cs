@@ -15,7 +15,7 @@
     {
         #region Constructors
 
-        public Ability(Hero caster, List<IBaseEffect> effects, int cost, TargetType targetType)
+        public Ability(Hero caster, List<IEffect> effects, int cost, TargetType targetType)
         {
             this.Caster = caster;
             this.Effects = effects;
@@ -33,7 +33,7 @@
             set;
         }
 
-        public List<IBaseEffect> Effects
+        public List<IEffect> Effects
         {
             get;
             set;
@@ -59,7 +59,7 @@
         {
             try
             {
-                foreach(IBaseEffect effect in Effects)
+                foreach(IEffect effect in Effects)
                 {
                     effect.Execute(caster, targetTile);
                 }
