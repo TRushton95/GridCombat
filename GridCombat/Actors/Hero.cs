@@ -72,6 +72,11 @@
 
         #region Methods
 
+        public void Cast(Tile targetTile, int abilitySlot)
+        {
+            //add ability in slot to board queue
+        }
+
         public void Damage(int damage)
         {
             this.CurrentHealth -= damage;
