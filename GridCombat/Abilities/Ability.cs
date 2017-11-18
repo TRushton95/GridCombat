@@ -51,12 +51,6 @@
             set;
         }
 
-        public AbilityTemplateType TemplateType
-        {
-            get;
-            set;
-        }
-
         #endregion
 
         #region Methods

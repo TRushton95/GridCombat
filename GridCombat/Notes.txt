@@ -29,3 +29,9 @@ this cannot come in the form of a seperate effect as it is intrinsicly tied to t
 hooks allow "onDispel()" to be called by the effect that dispels the effect, this triggering the extra
 damage. This may need an interface added to particular types of effects to add these hooks, eg "IDispelable" 
 or "IExpereable".
+
+--------------------
+
+Consistantify keeping position between actors and board state
+
+Investimagate nathan's solution for ability templating/execution
