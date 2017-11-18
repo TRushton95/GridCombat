@@ -77,12 +77,12 @@
             //add ability in slot to board queue
         }
 
-        public void Damage(int damage)
+        public void DealDamage(int damage)
         {
             this.CurrentHealth -= damage;
         }
 
-        public void Heal(int heal)
+        public void DealHeal(int heal)
         {
             this.CurrentHealth += heal;
         }
