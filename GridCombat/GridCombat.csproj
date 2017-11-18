@@ -50,6 +50,7 @@
     <Compile Include="Actors\BaseActor.cs" />
     <Compile Include="Actors\Hero.cs" />
     <Compile Include="Actors\Tile.cs" />
+    <Compile Include="Board.cs" />
     <Compile Include="Enums\TargetType.cs" />
     <Compile Include="Enums\TileType.cs" />
     <Compile Include="GridCombatGame.cs" />
