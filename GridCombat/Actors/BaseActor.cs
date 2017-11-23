@@ -7,7 +7,7 @@
 
     #endregion
 
-    abstract class BaseActor
+    abstract class BaseActor : BaseInstance
     {
         #region Constructors
 

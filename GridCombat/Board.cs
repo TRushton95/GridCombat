@@ -11,7 +11,25 @@
 
     class Board
     {
+        #region Fields
+
+        private static Board _instance;
+
+        #endregion
+
         #region Properties
+
+        public int Width
+        {
+            get;
+            set;
+        }
+
+        public int Height
+        {
+            get;
+            set;
+        }
 
         public List<List<Tile>> Tiles
         {
@@ -25,18 +43,24 @@
             set;
         }
 
+        public static Board Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Board();
+                }
+
+                return _instance;
+            }
+        }
+
         #endregion
 
         #region Methods
 
-        //Called when board picks up new ability pushed into the ability queue
-        public void ExecuteAbility(Ability ability, Tile targetTile)
-        {
-            foreach (IEffect effect in ability.Effects)
-            {
-                effect.Execute(ability.Caster, targetTile);
-            }
-        }
+        
 
         #endregion
     }
