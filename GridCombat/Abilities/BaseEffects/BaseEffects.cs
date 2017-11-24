@@ -12,12 +12,12 @@
 
         public static void Damage(Hero target, int value)
         {
-            target.Damage(value);
+            target.DealDamage(value);
         }
 
         public static void Heal(Hero target, int value)
         {
-            target.Heal(value);
+            target.DealHeal(value);
         }
 
         #endregion

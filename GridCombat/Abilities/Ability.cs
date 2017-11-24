@@ -8,6 +8,7 @@
     using GridCombat.Enums;
     using GridCombat.Services;
     using System;
+    using GridCombat.Templates;
 
     #endregion
 
@@ -15,12 +16,13 @@
     {
         #region Constructors
 
-        public Ability(Hero caster, List<IEffect> effects, int cost, TargetType targetType)
+        public Ability(Hero caster, List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template)
         {
             this.Caster = caster;
             this.Effects = effects;
             this.Cost = cost;
             this.TargetType = targetType;
+            this.Template = template;
         }
 
         #endregion
@@ -51,6 +53,12 @@
             set;
         }
 
+        public BaseTemplate Template
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Methods
@@ -67,13 +75,15 @@
                 Console.WriteLine("Cannot execute ability on that target");
                 return;
             }
+            
+            List<Tile> affectedTiles = Template.GetAffectedTiles(targetTile);
 
-            //Get affected tiles
-            //Repeat effect execution for each affect tile
-
-            foreach (IEffect effect in Effects)
+            foreach (Tile tile in affectedTiles)
             {
-                effect.Execute(Caster, targetTile);
+                foreach (IEffect effect in Effects)
+                {
+                    effect.Execute(Caster, targetTile);
+                }
             }
         }
 
