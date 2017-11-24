@@ -12,12 +12,22 @@
 
         public static void Damage(Hero target, int value)
         {
-            target.DealDamage(value);
+            target.CurrentHealth -= value;
+
+            if (target.CurrentHealth < 0)
+            {
+                target.CurrentHealth = 0;
+            }
         }
 
         public static void Heal(Hero target, int value)
         {
-            target.DealHeal(value);
+            target.CurrentHealth += value;
+
+            if (target.CurrentHealth > target.MaxHealth)
+            {
+                target.CurrentHealth = target.MaxHealth;
+            }
         }
 
         #endregion

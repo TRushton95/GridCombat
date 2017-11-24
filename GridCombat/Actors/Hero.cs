@@ -77,16 +77,6 @@
             //add ability in slot to board queue
         }
 
-        public void DealDamage(int damage)
-        {
-            this.CurrentHealth -= damage;
-        }
-
-        public void DealHeal(int heal)
-        {
-            this.CurrentHealth += heal;
-        }
-
         #endregion
     }
 }
