@@ -5,6 +5,7 @@
     using System.Collections.Generic;
     using Microsoft.Xna.Framework.Graphics;
     using GridCombat.Abilities;
+    using Abilities.Ticks;
 
     #endregion
 
@@ -63,6 +64,12 @@
         }
 
         public List<Ability> Abilities
+        {
+            get;
+            set;
+        }
+
+        public List<BaseTick> Ticks
         {
             get;
             set;

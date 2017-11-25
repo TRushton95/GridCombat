@@ -2,8 +2,10 @@
 {
     #region Usings
 
+    using System;
     using GridCombat.Actors;
     using GridCombat.Interfaces;
+    using Ticks;
 
     #endregion
 
@@ -33,26 +35,31 @@
             set;
         }
 
-        public Hero Target
-        {
-            get;
-            set;
-        }
-
         #endregion
 
         #region Methods
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            //Apply effect to target effect queue
-        }
+            Hero target = targetTile.Occuptant;
 
-        public void Tick()
-        {
-            BaseEffects.Heal(Target, Value);
+            if (target == null)
+            {
+                Console.WriteLine("No target on effect execute method.");
+                return;
+            }
 
-            Duration--;
+            foreach (BaseTick tick in target.Ticks)
+            {
+                if (tick.GetType() == typeof(HealTick))
+                {
+                    Console.WriteLine("Target already has a HealTick");
+                    return;
+                }
+            }
+
+            targetTile.Occuptant.Ticks.Add(
+                new HealTick(Value, Duration, target));
         }
 
         #endregion
