@@ -14,8 +14,6 @@
 
         public BaseActor(float width, float height, float posX, float posY, Texture2D texture)
         {
-            this.Width = width;
-            this.Height = height;
             this.PosX = posX;
             this.PosY = posY;
             this.Texture = texture;
