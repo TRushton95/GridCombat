@@ -19,8 +19,8 @@
 
         #region Constructors
 
-        public Hero(int maxHealth, int maxEnergy, int posX, int posY, int team)
-            : base(posX, posY, Textures.BlueUnit)
+        public Hero(int maxHealth, int maxEnergy, int posX, int posY, int team, Texture2D texture)
+            : base(posX, posY, texture)
         {
             this.MaxHealth = maxHealth;
             this.CurrentHealth = maxHealth;

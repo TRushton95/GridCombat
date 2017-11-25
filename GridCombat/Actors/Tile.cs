@@ -17,8 +17,8 @@
 
         #region Constructors
 
-        public Tile(int posX, int posY, TileType tileType)
-            : base(posX, posY, Textures.WhiteTile)
+        public Tile(int posX, int posY, TileType tileType, Texture2D texture)
+            : base(posX, posY, texture)
         {
             this.TileType = tileType;
         }

@@ -14,8 +14,8 @@
     {
         #region Constants
 
-        public const int Width = 20;
-        public const int Height = 10;
+        public const int Width = 5;
+        public const int Height = 5;
 
         #endregion
 
@@ -66,7 +66,7 @@
 
                 for (int y = 0; y < Height; y++)
                 {
-                    column.Add(new Tile(x, y, TileType.Ground));
+                    column.Add(new Tile(x, y, TileType.Ground, Textures.WhiteTile));
                 }
 
                 result.Add(column);
@@ -79,8 +79,8 @@
         {
             List<Hero> result = new List<Hero>();
 
-            result.Add(new Hero(10, 10, 0, 0, 1));
-            result.Add(new Hero(10, 10, Width - 1, Height - 1, 2));
+            result.Add(new Hero(10, 10, 0, 0, 1, Textures.BlueUnit));
+            result.Add(new Hero(10, 10, Width - 1, Height - 1, 2, Textures.RedUnit));
 
             return result;
         }
