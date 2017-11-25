@@ -35,22 +35,6 @@
             set;
         }
 
-        public float CanvasX
-        {
-            get
-            {
-                return (PosX * Tile.diameter) + (Tile.diameter / 4);
-            }
-        }
-
-        public float CanvasY
-        {
-            get
-            {
-                return PosY * Tile.diameter + (Tile.diameter / 4);
-            }
-        }
-
         public Texture2D Texture
         {
             get;
@@ -61,9 +45,9 @@
 
         #region Methods
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, int canvasX, int canvasY)
         {
-            spriteBatch.Draw(this.Texture, new Vector2(CanvasX, CanvasY), Color.White);
+            spriteBatch.Draw(this.Texture, new Vector2(canvasX, canvasY), Color.White);
         }
 
         #endregion

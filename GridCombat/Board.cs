@@ -6,6 +6,7 @@
     using GridCombat.Actors;
     using System.Collections.Generic;
     using Microsoft.Xna.Framework.Graphics;
+    using System;
 
     #endregion
 
@@ -14,7 +15,7 @@
         #region Constants
 
         public const int Width = 20;
-        public const int Height = 15;
+        public const int Height = 10;
 
         #endregion
 
@@ -96,13 +97,15 @@
             {
                 foreach (Tile tile in row)
                 {
-                    tile.Draw(spriteBatch);
+                    tile.Draw(spriteBatch, tile.PosX * Tile.diameter, tile.PosY * Tile.diameter);
                 }
             }
 
-            foreach(Hero hero in Heroes)
+            int offset = (Tile.diameter / 2) - (Hero.diameter / 2);
+
+            foreach (Hero hero in Heroes)
             {
-                hero.Draw(spriteBatch);
+                hero.Draw(spriteBatch, (hero.PosX * Tile.diameter) + offset, (hero.PosY * Tile.diameter) + offset);
             }
         }
 

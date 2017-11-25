@@ -13,7 +13,7 @@
     {
         #region Fields
 
-        private static float diameter = 50;
+        public static int diameter = 25;
 
         #endregion
 
