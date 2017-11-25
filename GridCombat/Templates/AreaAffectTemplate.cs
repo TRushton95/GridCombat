@@ -35,8 +35,8 @@
         {
             List<Tile> result = new List<Tile>();
 
-            int targetX = Convert.ToInt32(targetTile.PosX);
-            int targetY = Convert.ToInt32(targetTile.PosY);
+            int targetX = targetTile.PosX;
+            int targetY = targetTile.PosY;
 
             for (int x = targetX - Diameter; x < targetX + Diameter; x++)
             {

@@ -12,7 +12,7 @@
     {
         #region Constructors
 
-        public BaseActor(float width, float height, float posX, float posY, Texture2D texture)
+        public BaseActor(int posX, int posY, Texture2D texture)
         {
             this.PosX = posX;
             this.PosY = posY;
@@ -23,13 +23,13 @@
 
         #region Properties
 
-        public float PosX
+        public int PosX
         {
             get;
             set;
         }
 
-        public float PosY
+        public int PosY
         {
             get;
             set;
