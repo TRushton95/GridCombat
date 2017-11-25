@@ -66,6 +66,7 @@
     <Compile Include="Templates\AreaAffectTemplate.cs" />
     <Compile Include="Templates\BaseTemplate.cs" />
     <Compile Include="Templates\SingleTargetTemplate.cs" />
+    <Compile Include="Textures.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
