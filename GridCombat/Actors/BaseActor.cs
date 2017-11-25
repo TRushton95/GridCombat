@@ -4,6 +4,7 @@
 
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using Actors;
 
     #endregion
 
@@ -24,18 +25,6 @@
 
         #region Properties
 
-        public float Width
-        {
-            get;
-            set;
-        }
-
-        public float Height
-        {
-            get;
-            set;
-        }
-
         public float PosX
         {
             get;
@@ -46,6 +35,22 @@
         {
             get;
             set;
+        }
+
+        public float CanvasX
+        {
+            get
+            {
+                return (PosX * Tile.diameter) + (Tile.diameter / 4);
+            }
+        }
+
+        public float CanvasY
+        {
+            get
+            {
+                return PosY * Tile.diameter + (Tile.diameter / 4);
+            }
         }
 
         public Texture2D Texture
@@ -60,7 +65,7 @@
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.Texture, new Vector2(this.PosX, this.PosY), Color.White);
+            spriteBatch.Draw(this.Texture, new Vector2(CanvasX, CanvasY), Color.White);
         }
 
         #endregion

@@ -3,9 +3,8 @@
     #region Usings
 
     using GridCombat.Actors;
-    using GridCombat.Abilities;
     using System.Collections.Generic;
-    using GridCombat.Interfaces;
+    using Microsoft.Xna.Framework.Graphics;
 
     #endregion
 
@@ -60,7 +59,21 @@
 
         #region Methods
 
-        
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (List<Tile> row in Tiles)
+            {
+                foreach (Tile tile in row)
+                {
+                    tile.Draw(spriteBatch);
+                }
+            }
+
+            foreach(Hero hero in Heroes)
+            {
+                hero.Draw(spriteBatch);
+            }
+        }
 
         #endregion
     }

@@ -11,7 +11,7 @@
     {
         #region Fields
 
-        private static float diameter = 50;
+        public static float diameter = 50;
 
         #endregion
 

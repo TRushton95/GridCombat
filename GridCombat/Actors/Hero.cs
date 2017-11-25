@@ -79,9 +79,25 @@
 
         #region Methods
 
-        public void Cast(Tile targetTile, int abilitySlot)
+        public void CastAbility(Tile targetTile, int abilitySlot)
         {
-            //add ability in slot to board queue
+            if (Abilities[abilitySlot] != null)
+            {
+                Abilities[abilitySlot].Execute(targetTile);
+            }
+        }
+
+        public void NewTurn()
+        {
+            CurrentEnergy = MaxEnergy;
+        }
+
+        public void EndTurn()
+        {
+            foreach (BaseTick tick in Ticks)
+            {
+                tick.Tick();
+            }
         }
 
         #endregion
