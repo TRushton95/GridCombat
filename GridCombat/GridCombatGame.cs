@@ -1,9 +1,14 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-
-namespace GridCombat
+﻿namespace GridCombat
 {
+
+    #region Usings
+
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+
+    #endregion
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -11,6 +16,8 @@ namespace GridCombat
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        GameState gameState;
 
         public GridCombatGame()
         {
@@ -27,6 +34,9 @@ namespace GridCombat
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            gameState = new GameState();
+            gameState.LoadTextures(Content);
+            gameState.StartGame();
 
             base.Initialize();
         }
@@ -39,8 +49,6 @@ namespace GridCombat
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            Textures.Initialise(Content);
 
             // TODO: use this.Content to load your game content here
         }
@@ -64,7 +72,7 @@ namespace GridCombat
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            
 
             base.Update(gameTime);
         }
@@ -77,7 +85,11 @@ namespace GridCombat
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            gameState.Draw(spriteBatch);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

@@ -65,7 +65,7 @@
 
                 for (int y = 0; y < Height; y++)
                 {
-                    column.Add(new Tile(x, y, null, TileType.Ground));
+                    column.Add(new Tile(x, y, TileType.Ground));
                 }
 
                 result.Add(column);
@@ -78,8 +78,8 @@
         {
             List<Hero> result = new List<Hero>();
 
-            result.Add(new Hero(10, 10, 0, 0, 1, null));
-            result.Add(new Hero(10, 10, Width - 1, Height - 1, 2, null));
+            result.Add(new Hero(10, 10, 0, 0, 1));
+            result.Add(new Hero(10, 10, Width - 1, Height - 1, 2));
 
             return result;
         }

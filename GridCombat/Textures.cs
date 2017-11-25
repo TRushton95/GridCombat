@@ -7,7 +7,7 @@
 
     #endregion
 
-    static class Textures
+    class Textures
     {
         #region Constants
 
@@ -15,6 +15,12 @@
         const string BlackTileName = "BlackTile";
         const string BlueUnitName = "BlueUnit";
         const string RedUnitName = "RedUnit";
+
+        #endregion
+
+        #region Fields
+
+        private static Textures _instance;
 
         #endregion
 
@@ -28,11 +34,24 @@
 
         public static Texture2D RedUnit;
 
+        public static Textures Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Textures();
+                }
+
+                return _instance;
+            }
+        }
+
         #endregion
 
         #region Methods
 
-        public static void Initialise(ContentManager content)
+        public void Initialise(ContentManager content)
         {
             WhiteTile = content.Load<Texture2D>(WhiteTileName);
             BlackTile = content.Load<Texture2D>(BlackTileName);
