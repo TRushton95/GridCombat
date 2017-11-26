@@ -18,6 +18,7 @@
 
             Hero hoveredHero = hoveredTile != null ? hoveredTile.Occuptant : null;
 
+            // Hover tile
             if (hoveredTile != null)
             {
                 if (Board.HighlightedTile != hoveredTile)
@@ -30,6 +31,7 @@
                 Board.HighlightedTile = null;
             }
 
+            //Hover or select hero
             if (hoveredHero != null)
             {
                 if (mouseState.LeftButton == ButtonState.Pressed)
