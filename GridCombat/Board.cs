@@ -8,6 +8,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using System;
     using Microsoft.Xna.Framework;
+    using GridCombat.UI;
 
     #endregion
 
@@ -135,19 +136,7 @@
                 hero.Draw(spriteBatch, (hero.PosX * Tile.diameter) + offset, (hero.PosY * Tile.diameter) + offset);
             }
 
-            DrawStatsBox(spriteBatch, Heroes[0]);
-        }
-
-        private void DrawStatsBox(SpriteBatch spriteBatch, Hero hero)
-        {
-            string stats = String.Empty;
-
-            stats += "Team: " + hero.Team + "\n";
-            stats += "Unit: " + Heroes.IndexOf(hero) + "\n";
-            stats += "Health: " + hero.CurrentHealth + "/" + hero.MaxHealth + "\n";
-            stats += "Energy: " + hero.CurrentEnergy + "/" + hero.MaxEnergy;
-
-            spriteBatch.DrawString(Textures.SpriteFont, stats, new Vector2((Width + 1) * Tile.diameter, Tile.diameter / 4), Color.Black);
+            StatsBox.Draw(spriteBatch, Heroes[1]);
         }
 
         private Hero GetHeroAtCanvasPosition(int x, int y)

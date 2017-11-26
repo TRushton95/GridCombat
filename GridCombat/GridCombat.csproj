@@ -68,6 +68,7 @@
     <Compile Include="Templates\BaseTemplate.cs" />
     <Compile Include="Templates\SingleTargetTemplate.cs" />
     <Compile Include="Textures.cs" />
+    <Compile Include="UI\StatsBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -80,6 +81,7 @@
     <Content Include="Content\BlackTile.png" />
     <Content Include="Content\BlueUnit.png" />
     <Content Include="Content\RedUnit.png" />
+    <Content Include="Content\StatsBox.png" />
     <Content Include="Content\WhiteTile.png" />
     <Content Include="Icon.ico" />
     <Content Include="Notes.txt" />
@@ -87,6 +89,7 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
+    <None Include="Content\Font.spritefont" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
