@@ -14,7 +14,14 @@
 
         public IUIState HandleInput(MouseState mouseState, MouseState prevMouseState)
         {
-            Hero hoveredHero = Board.GetHeroAtCanvasPosition(mouseState.Position.X, mouseState.Position.Y);
+            Tile hoveredTile = Board.GetTileAtCanvasPosition(mouseState.Position.X, mouseState.Position.Y);
+
+            Hero hoveredHero = hoveredTile != null ? hoveredTile.Occuptant : null;
+
+            if (hoveredTile != null && Board.HighlightedTile != hoveredTile)
+            {
+                Board.HighlightedTile = hoveredTile;
+            }
 
             if (hoveredHero != null)
             {

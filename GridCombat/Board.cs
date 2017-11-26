@@ -25,6 +25,8 @@
 
         private static Board _instance;
 
+        private Tile _highlightedTile;
+
         #endregion
 
         #region Properties
@@ -39,6 +41,19 @@
         {
             get;
             set;
+        }
+
+        public Tile HighlightedTile
+        {
+            get
+            {
+                return _highlightedTile;
+            }
+
+            set
+            {
+                _highlightedTile = value;
+            }
         }
 
         public Hero SelectedHero
@@ -129,6 +144,26 @@
             }
 
             return result;
+        }
+
+        public Tile GetTileAtCanvasPosition(int x, int y)
+        {
+            foreach (List<Tile> column in Tiles)
+            {
+                foreach (Tile tile in column)
+                {
+                    int canvasX = tile.PosX * Tile.diameter;
+                    int canvasY = tile.PosY * Tile.diameter;
+
+                    if (x > canvasX && x < canvasX + Tile.diameter &&
+                        y > canvasY && y < canvasY + Tile.diameter)
+                    {
+                        return tile;
+                    }
+                }
+            }
+
+            return null;
         }
 
         public Hero GetHeroAtCanvasPosition(int x, int y)

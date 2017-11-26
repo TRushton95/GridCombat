@@ -11,12 +11,21 @@
     {
         #region Constants
 
+        //Tiles and Units
         const string WhiteTileName = "WhiteTile";
         const string BlackTileName = "BlackTile";
         const string BlueUnitName = "BlueUnit";
         const string RedUnitName = "RedUnit";
+
+        //Fonts
         const string SpriteFontName = "Font";
+        
+        //UI
         const string StatsBoxName = "StatsBox";
+
+        //Ability Icons
+
+
 
         #endregion
 
