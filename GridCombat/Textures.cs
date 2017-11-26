@@ -1,5 +1,6 @@
 ﻿namespace GridCombat
 {
+    using Microsoft.Xna.Framework;
     #region Usings
 
     using Microsoft.Xna.Framework.Content;
@@ -16,6 +17,7 @@
         const string BlackTileName = "BlackTile";
         const string BlueUnitName = "BlueUnit";
         const string RedUnitName = "RedUnit";
+        const string TileHighlightname = "TileHighlight";
 
         //Fonts
         const string SpriteFontName = "Font";
@@ -45,6 +47,8 @@
 
         public static Texture2D RedUnit;
 
+        public static Texture2D TileHighlight;
+
         public static SpriteFont SpriteFont;
 
         public static Texture2D StatsBox;
@@ -72,6 +76,7 @@
             BlackTile = content.Load<Texture2D>(BlackTileName);
             BlueUnit = content.Load<Texture2D>(BlueUnitName);
             RedUnit = content.Load<Texture2D>(RedUnitName);
+            TileHighlight = content.Load<Texture2D>(TileHighlightname);
             SpriteFont = content.Load<SpriteFont>(SpriteFontName);
             StatsBox = content.Load<Texture2D>(StatsBoxName);
         }

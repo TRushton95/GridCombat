@@ -25,8 +25,16 @@
 
         private static Board _instance;
 
-        private Tile _highlightedTile;
+        #endregion
 
+        #region Constructors
+
+        public Board()
+        {
+            Tiles = new List<List<Tile>>();
+            Heroes = new List<Hero>();
+        }
+        
         #endregion
 
         #region Properties
@@ -45,15 +53,8 @@
 
         public Tile HighlightedTile
         {
-            get
-            {
-                return _highlightedTile;
-            }
-
-            set
-            {
-                _highlightedTile = value;
-            }
+            get;
+            set;
         }
 
         public Hero SelectedHero
@@ -85,7 +86,19 @@
 
         #region Methods
 
-        private List<List<Tile>> GenerateTiles()
+        public void SpawnHero(Hero hero)
+        {
+            int x = hero.PosX;
+            int y = hero.PosY;
+
+            if (Tiles[x][y] != null && Tiles[x][y].Occuptant == null)
+            {
+                Heroes.Add(hero);
+                Tiles[x][y].Occuptant = hero;
+            }
+        }
+
+        private void GenerateTiles()
         {
             List<List<Tile>> result = new List<List<Tile>>();
 
@@ -112,23 +125,19 @@
                 result.Add(column);
             }
 
-            return result;
+            Tiles = result;
         }
 
-        private List<Hero> GenerateHeroes()
+        private void GenerateHeroes()
         {
-            List<Hero> result = new List<Hero>();
-
-            result.Add(new Hero(10, 10, 0, 0, 1, Textures.BlueUnit));
-            result.Add(new Hero(10, 10, Width - 1, Height - 1, 2, Textures.RedUnit));
-
-            return result;
+            SpawnHero(new Hero(10, 10, 0, 0, 1, Textures.BlueUnit));
+            SpawnHero(new Hero(10, 10, Width - 1, Height - 1, 2, Textures.RedUnit));
         }
 
         public void Generate()
         {
-            Tiles = GenerateTiles();
-            Heroes = GenerateHeroes();
+            GenerateTiles();
+            GenerateHeroes();
         }
 
         public List<Hero> GetHeroesByPlayer(int player)
@@ -193,6 +202,11 @@
                 {
                     tile.Draw(spriteBatch, tile.PosX * Tile.diameter, tile.PosY * Tile.diameter);
                 }
+            }
+
+            if (HighlightedTile != null)
+            {
+                spriteBatch.Draw(Textures.TileHighlight, new Vector2(HighlightedTile.PosX * Tile.diameter, HighlightedTile.PosY * Tile.diameter), Color.White);
             }
 
             int offset = (Tile.diameter / 2) - (Hero.diameter / 2);

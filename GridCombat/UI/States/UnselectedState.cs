@@ -18,9 +18,16 @@
 
             Hero hoveredHero = hoveredTile != null ? hoveredTile.Occuptant : null;
 
-            if (hoveredTile != null && Board.HighlightedTile != hoveredTile)
+            if (hoveredTile != null)
             {
-                Board.HighlightedTile = hoveredTile;
+                if (Board.HighlightedTile != hoveredTile)
+                {
+                    Board.HighlightedTile = hoveredTile;
+                }
+            }
+            else
+            {
+                Board.HighlightedTile = null;
             }
 
             if (hoveredHero != null)
