@@ -41,6 +41,17 @@
                 {
                     Board.HighlightedTile = hoveredTile;
                 }
+
+                //Move
+                if (hoveredTile.Occuptant == null)
+                {
+                    if (mouseState.RightButton == ButtonState.Pressed &&
+                        prevMouseState.RightButton != ButtonState.Pressed)
+                    {
+                        selectedHero.PosX = hoveredTile.PosX;
+                        selectedHero.PosY = hoveredTile.PosY;
+                    }
+                }
             }
             else
             {
