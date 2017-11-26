@@ -18,6 +18,7 @@
 
         public const int Width = 5;
         public const int Height = 5;
+        public const int HighlightBorderWidth = 3;
 
         #endregion
 
@@ -86,12 +87,23 @@
 
         #region Methods
 
+        public void MoveHero(Hero hero, int x, int y)
+        {
+            if (IsValidTile(x, y) && Tiles[x][y].Occuptant == null)
+            {
+                Tiles[hero.PosX][hero.PosY].Occuptant = null;
+                hero.PosX = x;
+                hero.PosY = y;
+                Tiles[x][y].Occuptant = hero;
+            }
+        }
+
         public void SpawnHero(Hero hero)
         {
             int x = hero.PosX;
             int y = hero.PosY;
 
-            if (Tiles[x][y] != null && Tiles[x][y].Occuptant == null)
+            if (IsValidTile(x, y) && Tiles[x][y].Occuptant == null)
             {
                 Heroes.Add(hero);
                 Tiles[x][y].Occuptant = hero;
@@ -102,24 +114,13 @@
         {
             List<List<Tile>> result = new List<List<Tile>>();
 
-            Texture2D tileTexture;
-
             for (int x = 0; x < Width; x++)
             {
                 List<Tile> column = new List<Tile>();
 
                 for (int y = 0; y < Height; y++)
                 {
-                    if ((x + y) % 2 == 0)
-                    {
-                        tileTexture = Textures.WhiteTile;
-                    }
-                    else
-                    {
-                        tileTexture = Textures.BlackTile;
-                    }
-
-                    column.Add(new Tile(x, y, TileType.Ground, tileTexture));
+                    column.Add(new Tile(x, y, TileType.Ground, Textures.WhiteTile));
                 }
 
                 result.Add(column);
@@ -194,6 +195,16 @@
             return null;
         }
 
+        private bool IsValidTile(int x, int y)
+        {
+            if (Tiles[x] != null && Tiles[x][y] != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (List<Tile> row in Tiles)
@@ -206,7 +217,10 @@
 
             if (HighlightedTile != null)
             {
-                spriteBatch.Draw(Textures.TileHighlight, new Vector2(HighlightedTile.PosX * Tile.diameter, HighlightedTile.PosY * Tile.diameter), Color.White);
+                spriteBatch.Draw(
+                    Textures.TileHighlight, 
+                    new Vector2((HighlightedTile.PosX * Tile.diameter) + HighlightBorderWidth, (HighlightedTile.PosY * Tile.diameter) + HighlightBorderWidth), 
+                    Color.White);
             }
 
             int offset = (Tile.diameter / 2) - (Hero.diameter / 2);
@@ -218,7 +232,10 @@
 
             if (SelectedHero != null)
             {
-                spriteBatch.Draw(Textures.SelectedHero, new Vector2((SelectedHero.PosX * Tile.diameter) + offset, (SelectedHero.PosY * Tile.diameter) + offset), Color.White);
+                spriteBatch.Draw(
+                    Textures.SelectedHero, 
+                    new Vector2((SelectedHero.PosX * Tile.diameter) + offset - HighlightBorderWidth, (SelectedHero.PosY * Tile.diameter) + offset - HighlightBorderWidth), 
+                    Color.White);
                 StatsBox.Draw(spriteBatch, SelectedHero, true);
             }
 

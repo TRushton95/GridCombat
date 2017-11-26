@@ -48,8 +48,7 @@
                     if (mouseState.RightButton == ButtonState.Pressed &&
                         prevMouseState.RightButton != ButtonState.Pressed)
                     {
-                        selectedHero.PosX = hoveredTile.PosX;
-                        selectedHero.PosY = hoveredTile.PosY;
+                        Board.MoveHero(selectedHero, hoveredTile.PosX, hoveredTile.PosY);
                     }
                 }
             }
