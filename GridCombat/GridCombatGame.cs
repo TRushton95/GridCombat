@@ -36,7 +36,7 @@
             // TODO: Add your initialization logic here
             gameState = new GameState();
             gameState.LoadTextures(Content);
-            gameState.StartGame();
+            gameState.StartGame(2);
 
             base.Initialize();
         }
@@ -72,7 +72,7 @@
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            
+            gameState.Update();
 
             base.Update(gameTime);
         }

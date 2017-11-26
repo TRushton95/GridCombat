@@ -7,7 +7,7 @@
 
     #endregion
 
-    class GameState : BaseInstance
+    partial class GameState : BaseInstance
     {
         #region Properties
 
@@ -17,7 +17,7 @@
             set;
         }
 
-        public int Turn
+        public int Players
         {
             get;
             set;
@@ -27,21 +27,22 @@
 
         #region Methods
 
-        public void EndTurn()
-        {
-
-        }
-
         public void LoadTextures(ContentManager contentManager)
         {
             Textures.Initialise(contentManager);
         }
 
-        public void StartGame()
+        public void StartGame(int players)
         {
             Board.Generate();
-            CurrentPlayer = 0;
-            Turn = 0;
+            this.Players = players;
+            this.CurrentPlayer = 0;
+            this.Turn = 0;
+        }
+
+        public void Update()
+        {
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)

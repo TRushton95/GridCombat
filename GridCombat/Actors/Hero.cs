@@ -87,19 +87,6 @@
             }
         }
 
-        public void NewTurn()
-        {
-            CurrentEnergy = MaxEnergy;
-        }
-
-        public void EndTurn()
-        {
-            foreach (BaseTick tick in Ticks)
-            {
-                tick.Tick();
-            }
-        }
-
         #endregion
     }
 }

@@ -102,6 +102,21 @@
             Heroes = GenerateHeroes();
         }
 
+        public List<Hero> GetHeroesByPlayer(int player)
+        {
+            List<Hero> result = new List<Hero>();
+
+            foreach (Hero hero in Heroes)
+            {
+                if (hero.Team == player)
+                {
+                    result.Add(hero);
+                }
+            }
+
+            return result;
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (List<Tile> row in Tiles)

@@ -23,7 +23,13 @@
 
         #region Methods
 
-        public virtual void Tick()
+        public void Tick()
+        {
+            Duration--;
+
+        }
+
+        public virtual void TickResolution()
         {
         }
 

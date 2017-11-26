@@ -58,6 +58,7 @@
     <Compile Include="Enums\TargetType.cs" />
     <Compile Include="Enums\TileType.cs" />
     <Compile Include="GameState.cs" />
+    <Compile Include="GameState.Turn.cs" />
     <Compile Include="GridCombatGame.cs" />
     <Compile Include="Interfaces\IEffect.cs" />
     <Compile Include="Program.cs" />

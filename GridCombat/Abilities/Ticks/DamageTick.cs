@@ -38,7 +38,7 @@
 
         #region Methods
 
-        public override void Tick()
+        public override void TickResolution()
         {
             BaseEffects.Damage(Target, Value);
         }
