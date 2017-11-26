@@ -5,6 +5,7 @@
     using GridCombat.Actors;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
     using System;
 
     #endregion
@@ -19,7 +20,7 @@
 
         #region Methods
 
-        public static void Draw(SpriteBatch spriteBatch, Hero hero)
+        public static void Draw(SpriteBatch spriteBatch, Hero hero, bool isHeroSelected = false)
         {
             string stats = String.Empty;
 
@@ -31,11 +32,26 @@
             int y = hero.PosY * Tile.diameter;
 
             Vector2 boxDimensions = Textures.SpriteFont.MeasureString(stats) + new Vector2(padding * 2, padding * 2);
-            Rectangle destinationRect = new Rectangle(x, y, (int)boxDimensions.X, (int)boxDimensions.Y);
 
-            spriteBatch.Draw(Textures.StatsBox, destinationRect, Color.White);
+            Point statsBoxPos;
+            float transparency;
 
-            spriteBatch.DrawString(Textures.SpriteFont, stats, new Vector2(x + padding, y + padding), Color.Black);
+            if (isHeroSelected)
+            {
+                statsBoxPos = new Point(x, y);
+                transparency = 1f;
+            }
+            else
+            {
+                statsBoxPos = Mouse.GetState().Position;
+                transparency = 0.8f;
+            }
+
+            Rectangle destinationRect = new Rectangle(statsBoxPos.X, statsBoxPos.Y, (int)boxDimensions.X, (int)boxDimensions.Y);
+
+            spriteBatch.Draw(Textures.StatsBox, destinationRect, new Color(Color.White, transparency));
+
+            spriteBatch.DrawString(Textures.SpriteFont, stats, new Vector2(statsBoxPos.X + padding, statsBoxPos.Y + padding), new Color(Color.Black, transparency));
         }
 
         #endregion

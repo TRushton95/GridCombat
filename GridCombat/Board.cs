@@ -169,12 +169,12 @@
 
             if (SelectedHero != null)
             {
-                StatsBox.Draw(spriteBatch, SelectedHero);
+                StatsBox.Draw(spriteBatch, SelectedHero, true);
             }
 
             if (HighlightedHero != null && HighlightedHero != SelectedHero)
             {
-                StatsBox.Draw(spriteBatch, HighlightedHero);
+                StatsBox.Draw(spriteBatch, HighlightedHero, false);
             }
         }
 
