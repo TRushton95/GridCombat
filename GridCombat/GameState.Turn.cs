@@ -1,8 +1,8 @@
 ﻿namespace GridCombat
 {
-    using GridCombat.Abilities.Ticks;
     #region Usings
 
+    using GridCombat.Abilities.Ticks;
     using GridCombat.Actors;
     using System.Collections.Generic;
 
@@ -40,7 +40,7 @@
 
         public void StartTurn()
         {
-
+            Turn++;
         }
 
         public void EndTurn()

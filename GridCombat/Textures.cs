@@ -15,6 +15,7 @@
         const string BlackTileName = "BlackTile";
         const string BlueUnitName = "BlueUnit";
         const string RedUnitName = "RedUnit";
+        const string SpriteFontName = "Font";
 
         #endregion
 
@@ -33,6 +34,8 @@
         public static Texture2D BlueUnit;
 
         public static Texture2D RedUnit;
+
+        public static SpriteFont SpriteFont;
 
         public static Textures Instance
         {
@@ -57,6 +60,7 @@
             BlackTile = content.Load<Texture2D>(BlackTileName);
             BlueUnit = content.Load<Texture2D>(BlueUnitName);
             RedUnit = content.Load<Texture2D>(RedUnitName);
+            SpriteFont = content.Load<SpriteFont>(SpriteFontName);
         }
 
         #endregion

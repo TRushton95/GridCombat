@@ -7,6 +7,7 @@
     using System.Collections.Generic;
     using Microsoft.Xna.Framework.Graphics;
     using System;
+    using Microsoft.Xna.Framework;
 
     #endregion
 
@@ -133,6 +134,39 @@
             {
                 hero.Draw(spriteBatch, (hero.PosX * Tile.diameter) + offset, (hero.PosY * Tile.diameter) + offset);
             }
+
+            DrawStatsBox(spriteBatch, Heroes[0]);
+        }
+
+        private void DrawStatsBox(SpriteBatch spriteBatch, Hero hero)
+        {
+            string stats = String.Empty;
+
+            stats += "Team: " + hero.Team + "\n";
+            stats += "Unit: " + Heroes.IndexOf(hero) + "\n";
+            stats += "Health: " + hero.CurrentHealth + "/" + hero.MaxHealth + "\n";
+            stats += "Energy: " + hero.CurrentEnergy + "/" + hero.MaxEnergy;
+
+            spriteBatch.DrawString(Textures.SpriteFont, stats, new Vector2((Width + 1) * Tile.diameter, Tile.diameter / 4), Color.Black);
+        }
+
+        private Hero GetHeroAtCanvasPosition(int x, int y)
+        {
+            int offset = (Tile.diameter / 2) - (Hero.diameter / 2);
+
+            foreach (Hero hero in Heroes)
+            {
+                int canvasX = (hero.PosX * Tile.diameter) + offset;
+                int canvasY = (hero.PosY * Tile.diameter) + offset;
+
+                if (x > canvasX && x < canvasX + Hero.diameter &&
+                    y > canvasY && y < canvasY + Hero.diameter)
+                {
+                    return hero;
+                }
+            }
+
+            return null;
         }
 
         #endregion
