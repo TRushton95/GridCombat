@@ -18,6 +18,7 @@
         const string BlueUnitName = "BlueUnit";
         const string RedUnitName = "RedUnit";
         const string TileHighlightname = "TileHighlight";
+        const string SelectedHeroName = "SelectedHero";
 
         //Fonts
         const string SpriteFontName = "Font";
@@ -49,6 +50,8 @@
 
         public static Texture2D TileHighlight;
 
+        public static Texture2D SelectedHero;
+
         public static SpriteFont SpriteFont;
 
         public static Texture2D StatsBox;
@@ -77,6 +80,7 @@
             BlueUnit = content.Load<Texture2D>(BlueUnitName);
             RedUnit = content.Load<Texture2D>(RedUnitName);
             TileHighlight = content.Load<Texture2D>(TileHighlightname);
+            SelectedHero = content.Load<Texture2D>(SelectedHeroName);
             SpriteFont = content.Load<SpriteFont>(SpriteFontName);
             StatsBox = content.Load<Texture2D>(StatsBoxName);
         }

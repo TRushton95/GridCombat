@@ -218,6 +218,7 @@
 
             if (SelectedHero != null)
             {
+                spriteBatch.Draw(Textures.SelectedHero, new Vector2((SelectedHero.PosX * Tile.diameter) + offset, (SelectedHero.PosY * Tile.diameter) + offset), Color.White);
                 StatsBox.Draw(spriteBatch, SelectedHero, true);
             }
 

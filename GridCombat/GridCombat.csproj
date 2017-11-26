@@ -85,6 +85,7 @@
     <Content Include="Content\BlackTile.png" />
     <Content Include="Content\BlueUnit.png" />
     <Content Include="Content\RedUnit.png" />
+    <Content Include="Content\SelectedHero.png" />
     <Content Include="Content\StatsBox.png" />
     <Content Include="Content\TileHighlight.png" />
     <Content Include="Content\WhiteTile.png" />
