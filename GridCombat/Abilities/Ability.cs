@@ -16,9 +16,8 @@
     {
         #region Constructors
 
-        public Ability(Hero caster, List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template)
+        public Ability(List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template, int casterId)
         {
-            this.Caster = caster;
             this.Effects = effects;
             this.Cost = cost;
             this.TargetType = targetType;
@@ -59,13 +58,19 @@
             set;
         }
 
+        public int CasterId
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Methods
 
         public bool ValidateTarget(Tile targetTile)
         {
-            return TargetValidatorService.Validate(this.Caster, targetTile, this.TargetType);
+            return TargetValidatorService.Validate(Board.GetHeroById(CasterId), targetTile, this.TargetType);
         }
 
         public void Execute(Tile targetTile)

@@ -19,19 +19,27 @@
 
         #region Constructors
 
-        public Hero(int maxHealth, int maxEnergy, int posX, int posY, int team, Texture2D texture)
+        public Hero(int id, int maxHealth, int maxEnergy, int posX, int posY, int team, Texture2D texture, List<Ability> abilities)
             : base(posX, posY, texture)
         {
+            this.Id = id;
             this.MaxHealth = maxHealth;
             this.CurrentHealth = maxHealth;
             this.MaxEnergy = maxEnergy;
             this.CurrentEnergy = maxEnergy;
             this.Team = team;
+            this.Abilities = abilities;
         }
 
         #endregion
 
         #region Properties
+
+        public int Id
+        {
+            get;
+            set;
+        }
 
         public int MaxHealth
         {

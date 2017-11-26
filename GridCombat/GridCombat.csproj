@@ -47,6 +47,7 @@
     <Compile Include="Abilities\Effects\HoTEffect.cs" />
     <Compile Include="Abilities\Effects\InstantDamageEffect.cs" />
     <Compile Include="Abilities\Effects\InstantHealEffect.cs" />
+    <Compile Include="Abilities\AbilityFactory.cs" />
     <Compile Include="Abilities\Ticks\BaseTick.cs" />
     <Compile Include="Abilities\Ticks\DamageTick.cs" />
     <Compile Include="Abilities\Ticks\HealTick.cs" />

@@ -9,6 +9,8 @@
     using System;
     using Microsoft.Xna.Framework;
     using GridCombat.UI;
+    using GridCombat.Abilities.Instances;
+    using GridCombat.Abilities;
 
     #endregion
 
@@ -131,8 +133,19 @@
 
         private void GenerateHeroes()
         {
-            SpawnHero(new Hero(10, 10, 0, 0, 1, Textures.BlueUnit));
-            SpawnHero(new Hero(10, 10, Width - 1, Height - 1, 2, Textures.RedUnit));
+            int id = 1;
+
+            SpawnHero(new Hero(id, 10, 10, 0, 0, 1, Textures.BlueUnit, new List<Ability>{
+                            AbilityFactory.Ignite(id),
+                            AbilityFactory.Regrowth(id)
+            }));
+
+            id = 2;
+
+            SpawnHero(new Hero(id, 10, 10, Width - 1, Height - 1, 2, Textures.RedUnit, new List<Ability>{
+                            AbilityFactory.Shoot(id),
+                            AbilityFactory.Heal(id),
+            }));
         }
 
         public void Generate()
@@ -187,6 +200,19 @@
 
                 if (x > canvasX && x < canvasX + Hero.diameter &&
                     y > canvasY && y < canvasY + Hero.diameter)
+                {
+                    return hero;
+                }
+            }
+
+            return null;
+        }
+
+        public Hero GetHeroById(int id)
+        {
+            foreach (Hero hero in Heroes)
+            {
+                if (hero.Id == id)
                 {
                     return hero;
                 }
