@@ -41,6 +41,18 @@
             set;
         }
 
+        public Hero SelectedHero
+        {
+            get;
+            set;
+        }
+
+        public Hero HighlightedHero
+        {
+            get;
+            set;
+        }
+
         public static Board Instance
         {
             get
@@ -119,6 +131,25 @@
             return result;
         }
 
+        public Hero GetHeroAtCanvasPosition(int x, int y)
+        {
+            int offset = (Tile.diameter / 2) - (Hero.diameter / 2);
+
+            foreach (Hero hero in Heroes)
+            {
+                int canvasX = (hero.PosX * Tile.diameter) + offset;
+                int canvasY = (hero.PosY * Tile.diameter) + offset;
+
+                if (x > canvasX && x < canvasX + Hero.diameter &&
+                    y > canvasY && y < canvasY + Hero.diameter)
+                {
+                    return hero;
+                }
+            }
+
+            return null;
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (List<Tile> row in Tiles)
@@ -136,26 +167,15 @@
                 hero.Draw(spriteBatch, (hero.PosX * Tile.diameter) + offset, (hero.PosY * Tile.diameter) + offset);
             }
 
-            StatsBox.Draw(spriteBatch, Heroes[1]);
-        }
-
-        private Hero GetHeroAtCanvasPosition(int x, int y)
-        {
-            int offset = (Tile.diameter / 2) - (Hero.diameter / 2);
-
-            foreach (Hero hero in Heroes)
+            if (SelectedHero != null)
             {
-                int canvasX = (hero.PosX * Tile.diameter) + offset;
-                int canvasY = (hero.PosY * Tile.diameter) + offset;
-
-                if (x > canvasX && x < canvasX + Hero.diameter &&
-                    y > canvasY && y < canvasY + Hero.diameter)
-                {
-                    return hero;
-                }
+                StatsBox.Draw(spriteBatch, SelectedHero);
             }
 
-            return null;
+            if (HighlightedHero != null && HighlightedHero != SelectedHero)
+            {
+                StatsBox.Draw(spriteBatch, HighlightedHero);
+            }
         }
 
         #endregion

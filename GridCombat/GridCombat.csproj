@@ -57,10 +57,12 @@
     <Compile Include="Board.cs" />
     <Compile Include="Enums\TargetType.cs" />
     <Compile Include="Enums\TileType.cs" />
+    <Compile Include="Enums\UIStateEnum.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="GameState.Turn.cs" />
     <Compile Include="GridCombatGame.cs" />
     <Compile Include="Interfaces\IEffect.cs" />
+    <Compile Include="Interfaces\IUIState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TargetValidatorService.cs" />
@@ -68,7 +70,9 @@
     <Compile Include="Templates\BaseTemplate.cs" />
     <Compile Include="Templates\SingleTargetTemplate.cs" />
     <Compile Include="Textures.cs" />
-    <Compile Include="UI\StatsBox.cs" />
+    <Compile Include="UI\Components\StatsBox.cs" />
+    <Compile Include="UI\States\SelectedState.cs" />
+    <Compile Include="UI\States\UnselectedState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

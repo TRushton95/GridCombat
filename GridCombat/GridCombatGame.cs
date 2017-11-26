@@ -38,6 +38,8 @@
             gameState.LoadTextures(Content);
             gameState.StartGame(2);
 
+            this.IsMouseVisible = true;
+
             base.Initialize();
         }
 
