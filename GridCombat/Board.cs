@@ -60,13 +60,24 @@
         {
             List<List<Tile>> result = new List<List<Tile>>();
 
+            Texture2D tileTexture;
+
             for (int x = 0; x < Width; x++)
             {
                 List<Tile> column = new List<Tile>();
 
                 for (int y = 0; y < Height; y++)
                 {
-                    column.Add(new Tile(x, y, TileType.Ground, Textures.WhiteTile));
+                    if ((x + y) % 2 == 0)
+                    {
+                        tileTexture = Textures.WhiteTile;
+                    }
+                    else
+                    {
+                        tileTexture = Textures.BlackTile;
+                    }
+
+                    column.Add(new Tile(x, y, TileType.Ground, tileTexture));
                 }
 
                 result.Add(column);
