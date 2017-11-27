@@ -84,18 +84,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Tiles\BlackTile.png" />
-    <Content Include="Content\UI\Spells\Fireball.png" />
-    <Content Include="Content\UI\Spells\Heal.png" />
-    <Content Include="Content\UI\Spells\Regrowth.png" />
-    <Content Include="Content\UI\Spells\Shoot.png" />
-    <Content Include="Content\UI\Spellbar.png" />
-    <Content Include="Content\Units\BlueUnit.png" />
-    <Content Include="Content\Units\RedUnit.png" />
-    <Content Include="Content\Units\SelectedHero.png" />
-    <Content Include="Content\UI\StatsBox.png" />
-    <Content Include="Content\Tiles\TileHighlight.png" />
-    <Content Include="Content\Tiles\WhiteTile.png" />
+    <Content Include="Content\BlackTile.png" />
+    <Content Include="Content\Fireball.png" />
+    <Content Include="Content\Heal.png" />
+    <Content Include="Content\Regrowth.png" />
+    <Content Include="Content\Shoot.png" />
+    <Content Include="Content\Spellbar.png" />
+    <Content Include="Content\BlueUnit.png" />
+    <Content Include="Content\RedUnit.png" />
+    <Content Include="Content\SelectedHero.png" />
+    <Content Include="Content\StatsBox.png" />
+    <Content Include="Content\TileHighlight.png" />
+    <Content Include="Content\WhiteTile.png" />
     <Content Include="Icon.ico" />
     <Content Include="Notes.txt" />
   </ItemGroup>
