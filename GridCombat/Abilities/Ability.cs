@@ -9,6 +9,7 @@
     using GridCombat.Services;
     using System;
     using GridCombat.Templates;
+    using Microsoft.Xna.Framework.Graphics;
 
     #endregion
 
@@ -16,7 +17,7 @@
     {
         #region Constructors
 
-        public Ability(List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template, int casterId)
+        public Ability(List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template, Texture2D icon, int casterId)
         {
             this.Effects = effects;
             this.Cost = cost;
@@ -53,6 +54,12 @@
         }
 
         public BaseTemplate Template
+        {
+            get;
+            set;
+        }
+
+        public Texture2D Icon
         {
             get;
             set;

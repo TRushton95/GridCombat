@@ -17,6 +17,7 @@ namespace GridCombat.Abilities.Instances
                 3,
                 TargetType.Enemy,
                 new SingleTargetTemplate(),
+                Textures.FireballIcon,
                 casterId);
 
             return result;
@@ -30,6 +31,7 @@ namespace GridCombat.Abilities.Instances
                 3,
                 TargetType.Ally,
                 new SingleTargetTemplate(),
+                Textures.RegrowthIcon,
                 casterId);
 
             return result;
@@ -43,6 +45,7 @@ namespace GridCombat.Abilities.Instances
                 3,
                 TargetType.Enemy,
                 new SingleTargetTemplate(),
+                Textures.ShootIcon,
                 casterId);
 
             return result;
@@ -56,6 +59,7 @@ namespace GridCombat.Abilities.Instances
                 3,
                 TargetType.Ally,
                 new SingleTargetTemplate(),
+                Textures.HealIcon,
                 casterId);
 
             return result;
