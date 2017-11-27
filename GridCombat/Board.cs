@@ -11,6 +11,7 @@
     using GridCombat.UI;
     using GridCombat.Abilities.Instances;
     using GridCombat.Abilities;
+    using GridCombat.UI.Components;
 
     #endregion
 
@@ -268,6 +269,11 @@
             if (HighlightedHero != null && HighlightedHero != SelectedHero)
             {
                 StatsBox.Draw(spriteBatch, HighlightedHero, false);
+            }
+
+            if (SelectedHero != null)
+            {
+                Spellbar.Draw(spriteBatch, SelectedHero);
             }
         }
 
