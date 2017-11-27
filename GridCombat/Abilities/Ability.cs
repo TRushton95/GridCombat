@@ -23,6 +23,7 @@
             this.Cost = cost;
             this.TargetType = targetType;
             this.Template = template;
+            this.Icon = icon;
         }
 
         #endregion

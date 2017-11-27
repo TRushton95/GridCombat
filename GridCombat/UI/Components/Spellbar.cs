@@ -37,10 +37,10 @@
             {
                 spriteBatch.Draw(
                     ability.Icon,
-                    new Vector2(destinationRect.Left + BorderWidth, destinationRect.Top + BorderWidth),
+                    new Vector2(destinationRect.Left + BorderWidth + offset, destinationRect.Top + BorderWidth),
                     Color.White);
-
-                offset += ability.Icon.Width + (BorderWidth * 2);
+                
+                offset += ability.Icon.Width;
             }
         }
 

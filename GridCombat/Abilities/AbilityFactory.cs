@@ -1,12 +1,15 @@
-﻿using GridCombat.Abilities.Effects;
-using GridCombat.Actors;
-using GridCombat.Interfaces;
-using System.Collections.Generic;
-using GridCombat.Enums;
-using GridCombat.Templates;
-
-namespace GridCombat.Abilities.Instances
+﻿namespace GridCombat.Abilities.Instances
 {
+    #region Usings
+
+    using GridCombat.Abilities.Effects;
+    using GridCombat.Interfaces;
+    using System.Collections.Generic;
+    using GridCombat.Enums;
+    using GridCombat.Templates;
+
+    #endregion
+
     static class AbilityFactory
     {
         public static Ability Ignite(int casterId)
