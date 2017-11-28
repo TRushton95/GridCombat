@@ -65,12 +65,17 @@
             //Hover ability
             if (hoveredAbility != null)
             {
+                if (mouseState.LeftButton == ButtonState.Pressed &&
+                    prevMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    return new TargetingState(selectedHero, hoveredAbility);
+                }
+
                 if (hoveredAbility != Board.HighlightedAbility)
                 {
                     Board.HighlightedAbility = hoveredAbility;
                 }
             }
-            //Deselect ability
             else
             {
                 Board.HighlightedAbility = null;

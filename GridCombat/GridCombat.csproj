@@ -74,6 +74,7 @@
     <Compile Include="UI\Components\Spellbar.cs" />
     <Compile Include="UI\Components\StatsBox.cs" />
     <Compile Include="UI\States\SelectedState.cs" />
+    <Compile Include="UI\States\TargetingState.cs" />
     <Compile Include="UI\States\UnselectedState.cs" />
   </ItemGroup>
   <ItemGroup>
