@@ -19,17 +19,58 @@
 
         #region Methods
 
+        #endregion
+
+        #region Properties
+
+        public static Texture2D Texture
+        {
+            get
+            {
+                return Textures.Spellbar;
+            }
+        }
+
+        public static int PosX
+        {
+            get
+            {
+                return ((Board.Width * Tile.diameter) / 2) - (Texture.Width / 2);
+            }
+        }
+
+        public static int PosY
+        {
+            get
+            {
+                return (Board.Height * Tile.diameter) + 10;
+            }
+        }
+
+        public static int Width
+        {
+            get
+            {
+                return Texture.Width;
+            }
+        }
+        public static int Height
+        {
+            get
+            {
+                return Texture.Height;
+            }
+        }
+
+        #endregion
+
+        #region Methods
+
         public static void Draw(SpriteBatch spriteBatch, Hero hero, int? selectedAbility = null)
         {
-            Texture2D spellbarTexture = Textures.Spellbar;
+            Rectangle destinationRect = new Rectangle(PosX, PosY, Width, Height);
 
-            Rectangle destinationRect = new Rectangle(
-                ((Board.Width * Tile.diameter) / 2) - (spellbarTexture.Width / 2), 
-                (Board.Height * Tile.diameter) + 10, 
-                (int)spellbarTexture.Width, 
-                (int)spellbarTexture.Height);
-
-            spriteBatch.Draw(spellbarTexture, destinationRect, Color.White);
+            spriteBatch.Draw(Texture, destinationRect, Color.White);
 
             int offset = 0;
 
