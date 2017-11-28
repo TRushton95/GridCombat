@@ -6,7 +6,6 @@
     using GridCombat.Actors;
     using System.Collections.Generic;
     using Microsoft.Xna.Framework.Graphics;
-    using System;
     using Microsoft.Xna.Framework;
     using GridCombat.UI;
     using GridCombat.Abilities.Instances;
@@ -223,6 +222,22 @@
 
         public Ability GetAbilityIconAtCanvasPosition(int x, int y)
         {
+            int offset = 0;
+
+            foreach (Ability ability in SelectedHero.Abilities)
+            {
+                int canvasX = Spellbar.PosX + offset + 1;
+                int canvasY = Spellbar.PosY;
+
+                if (x > canvasX && x < canvasX + ability.Icon.Width &&
+                    y > canvasY && y < canvasY + ability.Icon.Height)
+                {
+                    return ability;
+                }
+
+                offset += ability.Icon.Width;
+            }
+
             return null;
         }
 

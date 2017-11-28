@@ -1,5 +1,6 @@
 ﻿namespace GridCombat.UI.States
 {
+    using GridCombat.Abilities;
     #region Usings
 
     using GridCombat.Actors;
@@ -34,6 +35,9 @@
 
             Hero hoveredHero = hoveredTile != null ? hoveredTile.Occuptant : null;
 
+            Ability hoveredAbility = Board.GetAbilityIconAtCanvasPosition(mouseState.Position.X, mouseState.Position.Y);
+
+
             // Hover tile
             if (hoveredTile != null)
             {
@@ -56,6 +60,22 @@
             {
                 Board.HighlightedTile = null;
             }
+
+
+            //Hover ability
+            if (hoveredAbility != null)
+            {
+                if (hoveredAbility != Board.HighlightedAbility)
+                {
+                    Board.HighlightedAbility = hoveredAbility;
+                }
+            }
+            //Deselect ability
+            else
+            {
+                Board.HighlightedAbility = null;
+            }
+
 
             // Hover or Select hero
             if (hoveredHero != null)

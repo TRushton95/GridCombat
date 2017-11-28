@@ -17,7 +17,8 @@
             Ability result = new Ability(
                 "Fireball",
                 new List<IEffect> {
-                    new InstantDamageEffect(2) },
+                    new InstantDamageEffect(2),
+                    new DoTEffect(1, 3) },
                 3,
                 TargetType.Enemy,
                 new SingleTargetTemplate(),
@@ -32,7 +33,7 @@
             Ability result = new Ability(
                 "Regrowth",
                 new List<IEffect> {
-                    new InstantHealEffect(2) },
+                    new HoTEffect(2, 3) },
                 3,
                 TargetType.Ally,
                 new SingleTargetTemplate(),
