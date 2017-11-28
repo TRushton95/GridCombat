@@ -89,6 +89,7 @@
     <Content Include="Content\Fireball.png" />
     <Content Include="Content\Heal.png" />
     <Content Include="Content\Regrowth.png" />
+    <Content Include="Content\SelectedAbility.png" />
     <Content Include="Content\Shoot.png" />
     <Content Include="Content\Spellbar.png" />
     <Content Include="Content\BlueUnit.png" />

@@ -312,6 +312,11 @@
             {
                 StatsBox.DrawAbilityStats(spriteBatch, HighlightedAbility);
             }
+
+            if (SelectedAbility != null)
+            {
+                
+            }
         }
 
         #endregion

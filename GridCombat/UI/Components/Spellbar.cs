@@ -80,6 +80,14 @@
                     ability.Icon,
                     new Vector2(destinationRect.Left + BorderWidth + offset, destinationRect.Top + BorderWidth),
                     Color.White);
+
+                if (Board.SelectedAbility == ability)
+                {
+                    spriteBatch.Draw(
+                        Textures.SelectedAbility,
+                        new Vector2(destinationRect.Left + BorderWidth + offset, destinationRect.Top + BorderWidth),
+                        Color.White);
+                }
                 
                 offset += ability.Icon.Width;
             }

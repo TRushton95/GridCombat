@@ -32,6 +32,7 @@
         const string HealName = "Heal";
         const string RegrowthName = "Regrowth";
         const string ShootName = "Shoot";
+        const string SelectedAbilityName = "SelectedAbility";
 
 
         #endregion
@@ -74,6 +75,9 @@
 
         public static Texture2D ShootIcon;
 
+        public static Texture2D SelectedAbility;
+
+        
         public static Textures Instance
         {
             get
@@ -113,6 +117,7 @@
             HealIcon = content.Load<Texture2D>(HealName);
             ShootIcon = content.Load<Texture2D>(ShootName);
             RegrowthIcon = content.Load<Texture2D>(RegrowthName);
+            SelectedAbility = content.Load<Texture2D>(SelectedAbilityName);
         }
 
         #endregion

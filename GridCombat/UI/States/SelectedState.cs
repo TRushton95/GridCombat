@@ -68,6 +68,7 @@
                 if (mouseState.LeftButton == ButtonState.Pressed &&
                     prevMouseState.LeftButton != ButtonState.Pressed)
                 {
+                    Board.SelectedAbility = hoveredAbility;
                     return new TargetingState(selectedHero, hoveredAbility);
                 }
 
