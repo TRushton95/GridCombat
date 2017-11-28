@@ -35,6 +35,13 @@
             BaseEffects.Heal(targetTile.Occuptant, Value);
         }
 
+        public string GetDescription()
+        {
+            string result = "Heals " + Value + " health.";
+
+            return result;
+        }
+
         #endregion
     }
 }

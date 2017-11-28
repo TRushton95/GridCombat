@@ -68,6 +68,13 @@
                 new DamageTick(Value, Duration, target));
         }
 
+        public string GetDescription()
+        {
+            string result = "Deals " + Value + " damage per turn for " + Duration + " turns.";
+
+            return result;
+        }
+
         #endregion
     }
 }

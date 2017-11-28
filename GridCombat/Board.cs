@@ -73,6 +73,18 @@
             set;
         }
 
+        public Ability HighlightedAbility
+        {
+            get;
+            set;
+        }
+
+        public Ability SelectedAbility
+        {
+            get;
+            set;
+        }
+
         public static Board Instance
         {
             get
@@ -209,6 +221,11 @@
             return null;
         }
 
+        public Ability GetAbilityIconAtCanvasPosition(int x, int y)
+        {
+            return null;
+        }
+
         public Hero GetHeroById(int id)
         {
             foreach (Hero hero in Heroes)
@@ -263,17 +280,22 @@
                     Textures.SelectedHero, 
                     new Vector2((SelectedHero.PosX * Tile.diameter) + offset - HighlightBorderWidth, (SelectedHero.PosY * Tile.diameter) + offset - HighlightBorderWidth), 
                     Color.White);
-                StatsBox.Draw(spriteBatch, SelectedHero, true);
+                StatsBox.DrawHeroStats(spriteBatch, SelectedHero, true);
             }
 
             if (HighlightedHero != null && HighlightedHero != SelectedHero)
             {
-                StatsBox.Draw(spriteBatch, HighlightedHero, false);
+                StatsBox.DrawHeroStats(spriteBatch, HighlightedHero, false);
             }
 
             if (SelectedHero != null)
             {
                 Spellbar.Draw(spriteBatch, SelectedHero);
+            }
+            
+            if (HighlightedAbility != null)
+            {
+                StatsBox.DrawAbilityStats(spriteBatch, HighlightedAbility);
             }
         }
 

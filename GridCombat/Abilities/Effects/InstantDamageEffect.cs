@@ -35,6 +35,13 @@
             BaseEffects.Damage(targetTile.Occuptant, Value);
         }
 
+        public string GetDescription()
+        {
+            string result = "Deals " + Value + " damage.";
+
+            return result;
+        }
+
         #endregion
     }
 }

@@ -62,6 +62,13 @@
                 new HealTick(Value, Duration, target));
         }
 
+        public string GetDescription()
+        {
+            string result = "Heals " + Value + " health per turn for " + Duration + " turns.";
+
+            return result;
+        }
+
         #endregion
     }
 }

@@ -15,6 +15,7 @@
         public static Ability Ignite(int casterId)
         {
             Ability result = new Ability(
+                "Fireball",
                 new List<IEffect> {
                     new InstantDamageEffect(2) },
                 3,
@@ -29,6 +30,7 @@
         public static Ability Regrowth(int casterId)
         {
             Ability result = new Ability(
+                "Regrowth",
                 new List<IEffect> {
                     new InstantHealEffect(2) },
                 3,
@@ -43,6 +45,7 @@
         public static Ability Shoot(int casterId)
         {
             Ability result = new Ability(
+                "Shoot",
                 new List<IEffect> {
                     new InstantDamageEffect(4) },
                 3,
@@ -57,6 +60,7 @@
         public static Ability Heal(int casterId)
         {
             Ability result = new Ability(
+                "Heal",
                 new List<IEffect> {
                     new InstantHealEffect(4) },
                 3,

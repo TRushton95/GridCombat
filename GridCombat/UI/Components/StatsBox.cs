@@ -1,5 +1,6 @@
 ﻿namespace GridCombat.UI
 {
+    using GridCombat.Abilities;
     #region Usings
 
     using GridCombat.Actors;
@@ -20,7 +21,7 @@
 
         #region Methods
 
-        public static void Draw(SpriteBatch spriteBatch, Hero hero, bool isHeroSelected = false)
+        public static void DrawHeroStats(SpriteBatch spriteBatch, Hero hero, bool isHeroSelected = false)
         {
             string stats = String.Empty;
 
@@ -52,6 +53,23 @@
             spriteBatch.Draw(Textures.StatsBox, destinationRect, new Color(Color.White, transparency));
 
             spriteBatch.DrawString(Textures.SpriteFont, stats, new Vector2(statsBoxPos.X + padding, statsBoxPos.Y + padding), new Color(Color.Black, transparency));
+        }
+
+
+
+        public static void DrawAbilityStats(SpriteBatch spriteBatch, Ability ability)
+        {
+            string description = ability.GetProfile();
+
+            Vector2 boxDimensions = Textures.SpriteFont.MeasureString(description) + new Vector2(padding * 2, padding * 2);
+
+            Point statsBoxPos = Mouse.GetState().Position;
+
+            Rectangle destinationRect = new Rectangle(statsBoxPos.X, statsBoxPos.Y, (int)boxDimensions.X, (int)boxDimensions.Y);
+
+            spriteBatch.Draw(Textures.StatsBox, destinationRect, Color.White);
+
+            spriteBatch.DrawString(Textures.SpriteFont, description, new Vector2(statsBoxPos.X + padding, statsBoxPos.Y + padding), Color.Black);
         }
 
         #endregion

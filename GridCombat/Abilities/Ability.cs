@@ -10,6 +10,7 @@
     using System;
     using GridCombat.Templates;
     using Microsoft.Xna.Framework.Graphics;
+    using System.Text;
 
     #endregion
 
@@ -17,8 +18,9 @@
     {
         #region Constructors
 
-        public Ability(List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template, Texture2D icon, int casterId)
+        public Ability(string name, List<IEffect> effects, int cost, TargetType targetType, BaseTemplate template, Texture2D icon, int casterId)
         {
+            this.Name = name;
             this.Effects = effects;
             this.Cost = cost;
             this.TargetType = targetType;
@@ -31,6 +33,12 @@
         #region Properties
 
         public Hero Caster
+        {
+            get;
+            set;
+        }
+
+        public string Name
         {
             get;
             set;
@@ -98,6 +106,26 @@
                     effect.Execute(Caster, targetTile);
                 }
             }
+        }
+
+        public string GetProfile()
+        {
+            string result = String.Empty;
+
+            result = String.Concat(result, "Name: " + Name + "\n\n");
+            result = String.Concat(result, "Cost: " + Cost + "\n\n");
+
+            foreach (IEffect effect in Effects)
+            {
+                result = String.Concat(result, effect.GetDescription());
+
+                if (!(effect == Effects[Effects.Count - 1]))
+                {
+                    result = String.Concat(result, "\n");
+                }
+            }
+
+            return result;
         }
 
         #endregion

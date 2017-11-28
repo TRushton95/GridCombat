@@ -9,5 +9,7 @@
     interface IEffect
     {
         void Execute(Hero caster, Tile target);
+
+        string GetDescription();
     }
 }
