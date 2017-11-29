@@ -46,6 +46,7 @@
                 mouseState.LeftButton == ButtonState.Pressed && prevMouseState.LeftButton != ButtonState.Pressed)
             {
                 Board.PlayerTurnEnded = true;
+                Board.SelectedAbility = null;
                 return new UnselectedState();
             }
 
