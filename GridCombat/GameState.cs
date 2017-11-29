@@ -70,17 +70,17 @@
 
             IUIState newState = UIState.HandleInput(mouseState, prevMouseState, CurrentPlayer);
 
+            if (Board.PlayerTurnEnded)
+            {
+                NextPlayerTurn();
+                Board.PlayerTurnEnded = false;
+            }
+
             if (newState != null)
             {
                 UIState.OnLeave();
                 UIState = newState;
                 UIState.OnEnter();
-            }
-
-            if (Board.PlayerTurnEnded)
-            {
-                NextPlayerTurn();
-                Board.PlayerTurnEnded = false;
             }
         }
 

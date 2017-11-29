@@ -5,6 +5,7 @@
 
     using GridCombat.Actors;
     using GridCombat.Interfaces;
+    using GridCombat.UI.Components;
     using Microsoft.Xna.Framework.Input;
     using System;
 
@@ -36,6 +37,16 @@
             Hero hoveredHero = hoveredTile != null ? hoveredTile.Occuptant : null;
 
             Ability hoveredAbility = Board.GetAbilityIconAtCanvasPosition(mouseState.Position.X, mouseState.Position.Y);
+
+
+            //End turn
+            if (mouseState.Position.X > EndTurnBox.PosX && mouseState.Position.X < EndTurnBox.PosX + EndTurnBox.Width &&
+                mouseState.Position.Y > EndTurnBox.PosY && mouseState.Position.Y < EndTurnBox.PosY + EndTurnBox.Height &&
+                mouseState.LeftButton == ButtonState.Pressed && prevMouseState.LeftButton != ButtonState.Pressed)
+            {
+                return new UnselectedState();
+                Board.PlayerTurnEnded = true;
+            }
 
 
             // Hover tile

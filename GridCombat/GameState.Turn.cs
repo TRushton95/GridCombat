@@ -32,7 +32,7 @@
         {
             CurrentPlayer++;
 
-            if (CurrentPlayer >= Players)
+            if (CurrentPlayer > Players)
             {
                 CurrentPlayer = 1;
                 NextGameTurn();

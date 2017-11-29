@@ -19,6 +19,17 @@
 
             Hero hoveredHero = hoveredTile != null ? hoveredTile.Occuptant : null;
 
+
+            //End turn
+            if (mouseState.Position.X > EndTurnBox.PosX && mouseState.Position.X < EndTurnBox.PosX + EndTurnBox.Width &&
+                mouseState.Position.Y > EndTurnBox.PosY && mouseState.Position.Y < EndTurnBox.PosY + EndTurnBox.Height &&
+                mouseState.LeftButton == ButtonState.Pressed && prevMouseState.LeftButton != ButtonState.Pressed)
+            {
+                return new UnselectedState();
+                Board.PlayerTurnEnded = true;
+            }
+
+
             // Hover tile
             if (hoveredTile != null)
             {
@@ -48,12 +59,6 @@
             else
             {
                 Board.HighlightedHero = null;
-            }
-
-            if (mouseState.Position.X > EndTurnBox.PosX && mouseState.Position.X < EndTurnBox.PosX + EndTurnBox.Width &&
-                mouseState.Position.Y > EndTurnBox.PosY && mouseState.Position.Y < EndTurnBox.PosY + EndTurnBox.Height)
-            {
-                //End turn logic here
             }
 
             return null;
