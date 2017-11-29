@@ -95,12 +95,13 @@
             return Template.GetAffectedTiles(targetTile);
         }
 
-        public void Execute(Tile targetTile)
+        public bool Execute(Tile targetTile)
         {
             if (!ValidateTarget(targetTile))
             {
                 Console.WriteLine("Cannot execute ability on that target");
-                return;
+
+                return false;
             }
             
             List<Tile> affectedTiles = Template.GetAffectedTiles(targetTile);
@@ -112,6 +113,10 @@
                     effect.Execute(Caster, targetTile);
                 }
             }
+
+            Console.WriteLine("Ability executed");
+
+            return true;
         }
 
         public string GetProfile()

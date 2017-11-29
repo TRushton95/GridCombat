@@ -40,7 +40,7 @@
 
         public override void TickResolution()
         {
-            BaseEffects.Heal(Target, Value);
+            AtomicEffects.Heal(Target, Value);
         }
 
         #endregion

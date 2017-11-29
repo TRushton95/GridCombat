@@ -6,7 +6,7 @@
 
     #endregion
 
-    static class BaseEffects
+    static class AtomicEffects
     {
         #region Methods
 

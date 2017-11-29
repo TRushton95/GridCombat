@@ -2,7 +2,7 @@
  Ability Mechanism
 --------------------
 
-Abilities are constructed out of Effects, which are in turn built out of BaseEffects.
+Abilities are constructed out of Effects, which are in turn built out of AtomicEffects.
 
 A BaseEffect is designed to be an indivisible unit of work, it is not a class that will
 ever be used directly, but rather is intended to provide a single "thing" that happens

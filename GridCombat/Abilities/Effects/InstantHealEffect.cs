@@ -32,7 +32,7 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            BaseEffects.Heal(targetTile.Occuptant, Value);
+            AtomicEffects.Heal(targetTile.Occuptant, Value);
         }
 
         public string GetDescription()
