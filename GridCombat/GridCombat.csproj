@@ -76,6 +76,7 @@
     <Compile Include="Templates\BaseTemplate.cs" />
     <Compile Include="Templates\SingleTargetTemplate.cs" />
     <Compile Include="Textures.cs" />
+    <Compile Include="UI\Components\EndTurnBox.cs" />
     <Compile Include="UI\Components\Spellbar.cs" />
     <Compile Include="UI\Components\StatsBox.cs" />
     <Compile Include="UI\States\SelectedState.cs" />
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\BlackTile.png" />
+    <Content Include="Content\EndTurnBox.png" />
     <Content Include="Content\Fireball.png" />
     <Content Include="Content\GreenFilter.png" />
     <Content Include="Content\Heal.png" />

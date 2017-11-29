@@ -21,12 +21,6 @@
 
         #region Properties
 
-        public int CurrentPlayer
-        {
-            get;
-            set;
-        }
-
         public int Players
         {
             get;

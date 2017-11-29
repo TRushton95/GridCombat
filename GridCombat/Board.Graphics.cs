@@ -25,6 +25,8 @@
                 }
             }
 
+            EndTurnBox.Draw(spriteBatch);
+
             if (HighlightedTile != null)
             {
                 spriteBatch.Draw(

@@ -18,6 +18,12 @@
             set;
         }
 
+        public int CurrentPlayer
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Methods

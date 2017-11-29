@@ -86,15 +86,6 @@
             if (mouseState.LeftButton == ButtonState.Pressed &&
                 prevMouseState.LeftButton != ButtonState.Pressed)
             {
-                /*
-                 * TO-DO
-                 * 
-                 * VALIDATE TARGET AND SHOW RESULT TO USER IN TOOLTIP
-                 * 
-                 * selectedAbility.ValidateTarget(hoveredTile);
-                 * 
-                 */
-
                 if (hoveredTile != null)
                 {
                     selectedAbility.Execute(hoveredTile);

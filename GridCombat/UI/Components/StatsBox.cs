@@ -1,8 +1,8 @@
 ﻿namespace GridCombat.UI
 {
-    using GridCombat.Abilities;
     #region Usings
 
+    using GridCombat.Abilities;
     using GridCombat.Actors;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;

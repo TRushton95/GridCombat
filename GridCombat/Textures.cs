@@ -29,6 +29,7 @@
         //UI
         const string StatsBoxName = "StatsBox";
         const string SpellbarName = "Spellbar";
+        const string EndTurnBoxName = "EndTurnBox";
 
         //Ability Icons
         const string FireballName = "Fireball";
@@ -72,6 +73,8 @@
         public static Texture2D StatsBox;
 
         public static Texture2D Spellbar;
+
+        public static Texture2D EndTurnBox;
 
         //Ability Icons
         public static Texture2D FireballIcon;
@@ -120,6 +123,7 @@
             //UI
             StatsBox = content.Load<Texture2D>(StatsBoxName);
             Spellbar = content.Load<Texture2D>(SpellbarName);
+            EndTurnBox = content.Load<Texture2D>(EndTurnBoxName);
 
             //Ability Icons
             FireballIcon = content.Load<Texture2D>(FireballName);

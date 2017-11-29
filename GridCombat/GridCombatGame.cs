@@ -39,6 +39,7 @@
             gameState.StartGame(2);
 
             this.IsMouseVisible = true;
+            this.Window.AllowUserResizing = true;
 
             base.Initialize();
         }
