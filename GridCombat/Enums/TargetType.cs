@@ -2,6 +2,8 @@
 {
     enum TargetType
     {
+        Any = 0,
+
         EmptyTile = 1,
 
         Hero = 2,

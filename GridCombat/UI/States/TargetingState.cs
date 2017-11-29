@@ -94,6 +94,11 @@
                  * selectedAbility.ValidateTarget(hoveredTile);
                  * 
                  */
+
+                if (hoveredTile != null)
+                {
+                    selectedAbility.Execute(hoveredTile);
+                }
             }
 
             if (hoveredHero != Board.HighlightedHero && hoveredHero != Board.SelectedHero)

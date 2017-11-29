@@ -90,6 +90,11 @@
             return TargetValidatorService.Validate(Board.GetHeroById(CasterId), targetTile, this.TargetType);
         }
 
+        public List<Tile> GetAffectedTiles(Tile targetTile)
+        {
+            return Template.GetAffectedTiles(targetTile);
+        }
+
         public void Execute(Tile targetTile)
         {
             if (!ValidateTarget(targetTile))

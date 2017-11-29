@@ -15,13 +15,13 @@
         public static Ability Fireball(int casterId)
         {
             Ability result = new Ability(
-                "Fireball",
+                "Rain of a Thousand Flames",
                 new List<IEffect> {
                     new InstantDamageEffect(2),
                     new DoTEffect(1, 3) },
                 3,
                 TargetType.Enemy,
-                new SingleTargetTemplate(),
+                new AreaAffectTemplate(2),
                 Textures.FireballIcon,
                 casterId);
 

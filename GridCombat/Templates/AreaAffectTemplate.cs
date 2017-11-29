@@ -12,19 +12,27 @@
     {
         #region Constructors
 
-        public AreaAffectTemplate(int diameter)
+        public AreaAffectTemplate(int radius)
         {
-            this.Diameter = diameter;
+            this.Radius = radius;
         }
 
         #endregion
 
         #region Properties
 
-        public int Diameter
+        public int Radius
         {
             get;
             set;
+        }
+
+        private int Diameter
+        {
+            get
+            {
+                return (Radius * 2) + 1;
+            }
         }
 
         #endregion
@@ -33,16 +41,23 @@
 
         public override List<Tile> GetAffectedTiles(Tile targetTile)
         {
-            List<Tile> result = new List<Tile>();
 
             int targetX = targetTile.PosX;
             int targetY = targetTile.PosY;
 
-            for (int x = targetX - Diameter; x < targetX + Diameter; x++)
+            int initX = targetX - Radius;
+            int initY = targetY - Radius;
+
+            List<Tile> result = new List<Tile>();
+
+            for (int x = initX; x <= targetX + Radius; x++)
             {
-                for (int y = targetY - Diameter; y < targetY + Diameter; y++)
+                for (int y = initY; y <= targetY + Radius; y++)
                 {
-                    if (Board.Tiles[x] != null && Board.Tiles[x][y] != null)
+                    if (x >= 0 && x < Board.Tiles.Count &&
+                        Board.Tiles[x] != null &&
+                        y >= 0 && y < Board.Tiles[x].Count &&
+                        Board.Tiles[x][y] != null)
                     {
                         result.Add(Board.Tiles[x][y]);
                     }

@@ -15,6 +15,10 @@
 
             switch (targetType)
             {
+                case TargetType.Any:
+                    result = true;
+                    break;
+
                 case TargetType.EmptyTile:
                     result = ValidateEmptyTile(caster, targetTile);
                     break;

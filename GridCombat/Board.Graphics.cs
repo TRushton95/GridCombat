@@ -78,10 +78,15 @@
                     filter = Textures.RedFilter;
                 }
 
-                int posX = (HighlightedTile.PosX * Tile.diameter) + HighlightBorderWidth;
-                int posY = (HighlightedTile.PosY * Tile.diameter) + HighlightBorderWidth;
+                List<Tile> affectedTiles = SelectedAbility.GetAffectedTiles(HighlightedTile);
+                foreach (Tile tile in affectedTiles)
+                {
+                    int posX = (tile.PosX * Tile.diameter) + HighlightBorderWidth;
+                    int posY = (tile.PosY * Tile.diameter) + HighlightBorderWidth;
 
-                spriteBatch.Draw(filter, new Vector2(posX, posY), new Color(Color.White, 0.1f));
+                    spriteBatch.Draw(filter, new Vector2(posX, posY), new Color(Color.White, 0.1f));
+                }
+
             }
 
             #endregion
