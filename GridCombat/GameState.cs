@@ -88,8 +88,8 @@
         {
             Board.Draw(spriteBatch);
 
-            spriteBatch.DrawString(Textures.SpriteFont, $"Current player: {CurrentPlayer}", new Vector2(10, 270), Color.Black);
-            spriteBatch.DrawString(Textures.SpriteFont, $"Turn: {Turn}", new Vector2(10, 290), Color.Black);
+            spriteBatch.DrawString(Textures.SpriteFont, $"Current player: {CurrentPlayer}", new Vector2(10, (Board.Height * 50) + 20), Color.Black);
+            spriteBatch.DrawString(Textures.SpriteFont, $"Turn: {Turn}", new Vector2(10, (Board.Height * 50) + 40), Color.Black);
         }
 
         #endregion

@@ -19,7 +19,7 @@
         #region Constants
 
         public const int Width = 15;
-        public const int Height = 5;
+        public const int Height = 8;
         public const int HighlightBorderWidth = 3;
 
         #endregion
