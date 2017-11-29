@@ -4,6 +4,7 @@
 
     using GridCombat.Actors;
     using GridCombat.Interfaces;
+    using GridCombat.UI.Components;
     using Microsoft.Xna.Framework.Input;
 
     #endregion
@@ -47,6 +48,12 @@
             else
             {
                 Board.HighlightedHero = null;
+            }
+
+            if (mouseState.Position.X > EndTurnBox.PosX && mouseState.Position.X < EndTurnBox.PosX + EndTurnBox.Width &&
+                mouseState.Position.Y > EndTurnBox.PosY && mouseState.Position.Y < EndTurnBox.PosY + EndTurnBox.Height)
+            {
+                //End turn logic here
             }
 
             return null;
