@@ -29,6 +29,7 @@
             this.CurrentEnergy = maxEnergy;
             this.Team = team;
             this.Abilities = abilities;
+            this.Ticks = new List<BaseTick>();
         }
 
         #endregion
