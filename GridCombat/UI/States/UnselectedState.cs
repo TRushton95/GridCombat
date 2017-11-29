@@ -25,8 +25,8 @@
                 mouseState.Position.Y > EndTurnBox.PosY && mouseState.Position.Y < EndTurnBox.PosY + EndTurnBox.Height &&
                 mouseState.LeftButton == ButtonState.Pressed && prevMouseState.LeftButton != ButtonState.Pressed)
             {
-                return new UnselectedState();
                 Board.PlayerTurnEnded = true;
+                return new UnselectedState();
             }
 
 

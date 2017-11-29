@@ -25,8 +25,8 @@
 
         public void Tick()
         {
+            TickResolution();
             Duration--;
-
         }
 
         public virtual void TickResolution()
