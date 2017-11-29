@@ -20,6 +20,9 @@
         const string TileHighlightname = "TileHighlight";
         const string SelectedHeroName = "SelectedHero";
 
+        const string RedFilterName = "RedFilter";
+        const string GreenFilterName = "GreenFilter";
+
         //Fonts
         const string SpriteFontName = "Font";
         
@@ -57,6 +60,10 @@
         public static Texture2D TileHighlight;
 
         public static Texture2D SelectedHero;
+
+        public static Texture2D RedFilter;
+
+        public static Texture2D GreenFilter;
 
         //Fonts
         public static SpriteFont SpriteFont;
@@ -104,6 +111,8 @@
             RedUnit = content.Load<Texture2D>(RedUnitName);
             TileHighlight = content.Load<Texture2D>(TileHighlightname);
             SelectedHero = content.Load<Texture2D>(SelectedHeroName);
+            RedFilter = content.Load<Texture2D>(RedFilterName);
+            GreenFilter = content.Load<Texture2D>(GreenFilterName);
 
             //Fonts
             SpriteFont = content.Load<SpriteFont>(SpriteFontName);
