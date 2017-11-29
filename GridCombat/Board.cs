@@ -36,6 +36,7 @@
         {
             Tiles = new List<List<Tile>>();
             Heroes = new List<Hero>();
+            PlayerTurnEnded = false;
         }
         
         #endregion
@@ -79,6 +80,12 @@
         }
 
         public Ability SelectedAbility
+        {
+            get;
+            set;
+        }
+
+        public bool PlayerTurnEnded
         {
             get;
             set;

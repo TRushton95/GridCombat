@@ -4,6 +4,7 @@
 
     using GridCombat.Interfaces;
     using GridCombat.UI.States;
+    using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
@@ -16,6 +17,17 @@
 
         public MouseState mouseState;
         public MouseState prevMouseState;
+
+        #endregion
+
+        #region Constructors
+
+        public GameState()
+        {
+            Players = 2;
+            CurrentPlayer = 1;
+            Turn = 0;
+        }
 
         #endregion
 
@@ -46,8 +58,8 @@
         {
             Board.Generate();
             this.Players = players;
-            this.CurrentPlayer = 0;
-            this.Turn = 0;
+            this.CurrentPlayer = 1;
+            this.Turn = 1;
             this.UIState = new UnselectedState();
         }
 
@@ -56,7 +68,7 @@
             prevMouseState = mouseState;
             mouseState = Mouse.GetState();
 
-            IUIState newState = UIState.HandleInput(mouseState, prevMouseState);
+            IUIState newState = UIState.HandleInput(mouseState, prevMouseState, CurrentPlayer);
 
             if (newState != null)
             {
@@ -64,11 +76,20 @@
                 UIState = newState;
                 UIState.OnEnter();
             }
+
+            if (Board.PlayerTurnEnded)
+            {
+                NextPlayerTurn();
+                Board.PlayerTurnEnded = false;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             Board.Draw(spriteBatch);
+
+            spriteBatch.DrawString(Textures.SpriteFont, $"Current player: {CurrentPlayer}", new Vector2(10, 270), Color.Black);
+            spriteBatch.DrawString(Textures.SpriteFont, $"Turn: {Turn}", new Vector2(10, 290), Color.Black);
         }
 
         #endregion

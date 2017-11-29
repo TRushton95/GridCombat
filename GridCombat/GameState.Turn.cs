@@ -28,9 +28,17 @@
 
         #region Methods
 
-        public void StartPlayerTurn(int player)
+        public void NextPlayerTurn()
         {
-            List<Hero> heroes = Board.GetHeroesByPlayer(player);
+            CurrentPlayer++;
+
+            if (CurrentPlayer >= Players)
+            {
+                CurrentPlayer = 1;
+                NextGameTurn();
+            }
+
+            List<Hero> heroes = Board.GetHeroesByPlayer(CurrentPlayer);
 
             foreach (Hero hero in heroes)
             {
@@ -39,19 +47,9 @@
             }
         }
 
-        public void EndPlayerTurn(int player)
-        {
-
-        }
-
-        public void StartTurn()
+        public void NextGameTurn()
         {
             Turn++;
-        }
-
-        public void EndTurn()
-        {
-
         }
 
         private void ResolveTicks(Hero hero)

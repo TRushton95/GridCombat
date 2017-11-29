@@ -8,7 +8,7 @@
 
     interface IUIState
     {
-        IUIState HandleInput(MouseState mouseState, MouseState prevMouseState);
+        IUIState HandleInput(MouseState mouseState, MouseState prevMouseState, int currentPlayer);
 
         void OnEnter();
 

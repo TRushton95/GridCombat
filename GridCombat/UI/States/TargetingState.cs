@@ -30,7 +30,7 @@
 
         #region Methods
 
-        public IUIState HandleInput(MouseState mouseState, MouseState prevMouseState)
+        public IUIState HandleInput(MouseState mouseState, MouseState prevMouseState, int currentPlayer)
         {
             Tile hoveredTile = Board.GetTileAtCanvasPosition(mouseState.Position.X, mouseState.Position.Y);
 

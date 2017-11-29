@@ -13,7 +13,7 @@
     {
         #region Methods
 
-        public IUIState HandleInput(MouseState mouseState, MouseState prevMouseState)
+        public IUIState HandleInput(MouseState mouseState, MouseState prevMouseState, int currentPlayer)
         {
             Tile hoveredTile = Board.GetTileAtCanvasPosition(mouseState.Position.X, mouseState.Position.Y);
 
@@ -35,7 +35,7 @@
             //Hover or select hero
             if (hoveredHero != null)
             {
-                if (mouseState.LeftButton == ButtonState.Pressed)
+                if (mouseState.LeftButton == ButtonState.Pressed && hoveredHero.Team == currentPlayer)
                 {
                     return new SelectedState(hoveredHero);
                 }
