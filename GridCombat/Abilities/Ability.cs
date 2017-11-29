@@ -32,12 +32,6 @@
 
         #region Properties
 
-        public Hero Caster
-        {
-            get;
-            set;
-        }
-
         public string Name
         {
             get;
@@ -109,7 +103,7 @@
             {
                 foreach (IEffect effect in Effects)
                 {
-                    effect.Execute(Caster, targetTile);
+                    effect.Execute(Board.GetHeroById(CasterId), tile);
                 }
             }
 

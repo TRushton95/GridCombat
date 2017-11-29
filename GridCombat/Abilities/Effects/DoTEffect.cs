@@ -49,13 +49,12 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
-            Hero target = targetTile.Occuptant;
-
-            if (target == null)
+            if (!ValidateTarget(targetTile))
             {
-                Console.WriteLine("No target on effect execute method.");
                 return;
             }
+
+            Hero target = targetTile.Occuptant;
 
             foreach (BaseTick tick in target.Ticks)
             {

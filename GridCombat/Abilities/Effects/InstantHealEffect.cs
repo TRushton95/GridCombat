@@ -34,6 +34,11 @@
 
         public void Execute(Hero caster, Tile targetTile)
         {
+            if (!ValidateTarget(targetTile))
+            {
+                return;
+            }
+
             AtomicEffects.Heal(targetTile.Occuptant, Value);
         }
 

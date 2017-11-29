@@ -28,7 +28,7 @@
             set;
         }
 
-        private bool ValidateTarget(Tile targetTile)
+        protected bool ValidateTarget(Tile targetTile)
         {
             return TargetValidatorService.Validate(Board.GetHeroById(CasterId), targetTile, this.TargetType);
         }
