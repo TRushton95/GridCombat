@@ -56,6 +56,7 @@
     <Compile Include="Actors\Tile.cs" />
     <Compile Include="BaseInstance.cs" />
     <Compile Include="Board.cs" />
+    <Compile Include="Board.Graphics.cs" />
     <Compile Include="Enums\TargetType.cs" />
     <Compile Include="Enums\TileType.cs" />
     <Compile Include="Enums\UIStateEnum.cs" />
@@ -87,7 +88,9 @@
   <ItemGroup>
     <Content Include="Content\BlackTile.png" />
     <Content Include="Content\Fireball.png" />
+    <Content Include="Content\GreenFilter.png" />
     <Content Include="Content\Heal.png" />
+    <Content Include="Content\RedFilter.png" />
     <Content Include="Content\Regrowth.png" />
     <Content Include="Content\SelectedAbility.png" />
     <Content Include="Content\Shoot.png" />

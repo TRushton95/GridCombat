@@ -12,7 +12,7 @@
 
     static class AbilityFactory
     {
-        public static Ability Ignite(int casterId)
+        public static Ability Fireball(int casterId)
         {
             Ability result = new Ability(
                 "Fireball",

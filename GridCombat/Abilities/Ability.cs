@@ -26,6 +26,7 @@
             this.TargetType = targetType;
             this.Template = template;
             this.Icon = icon;
+            this.CasterId = casterId;
         }
 
         #endregion
