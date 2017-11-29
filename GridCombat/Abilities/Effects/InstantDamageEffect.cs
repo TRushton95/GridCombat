@@ -3,15 +3,17 @@
     #region Usings
 
     using GridCombat.Actors;
+    using GridCombat.Enums;
     using GridCombat.Interfaces;
 
     #endregion
 
-    class InstantDamageEffect : IEffect
+    class InstantDamageEffect : BaseEffect, IEffect
     {
         #region Constructors
 
-        public InstantDamageEffect(int value)
+        public InstantDamageEffect(int value, TargetType targetType)
+            : base(targetType)
         {
             this.Value = value;
         }

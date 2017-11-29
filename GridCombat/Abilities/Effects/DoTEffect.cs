@@ -6,14 +6,16 @@
     using GridCombat.Actors;
     using GridCombat.Interfaces;
     using Ticks;
+    using GridCombat.Enums;
 
     #endregion
 
-    class DoTEffect : IEffect
+    class DoTEffect : BaseEffect, IEffect
     {
         #region Constructors
 
-        public DoTEffect(int value, int duration)
+        public DoTEffect(int value, int duration, TargetType targetType)
+            : base(targetType)
         {
             this.Value = value;
             this.Duration = duration;
