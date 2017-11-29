@@ -10,7 +10,6 @@
     using System;
     using GridCombat.Templates;
     using Microsoft.Xna.Framework.Graphics;
-    using System.Text;
 
     #endregion
 

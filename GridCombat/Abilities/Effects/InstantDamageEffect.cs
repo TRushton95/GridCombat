@@ -12,8 +12,8 @@
     {
         #region Constructors
 
-        public InstantDamageEffect(int value, TargetType targetType)
-            : base(targetType)
+        public InstantDamageEffect(int value, TargetType targetType, int casterId)
+            : base(targetType, casterId)
         {
             this.Value = value;
         }

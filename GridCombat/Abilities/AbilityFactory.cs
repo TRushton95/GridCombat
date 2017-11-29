@@ -17,8 +17,8 @@
             Ability result = new Ability(
                 "Rain of a Thousand Flames",
                 new List<IEffect> {
-                    new InstantDamageEffect(2),
-                    new DoTEffect(1, 3) },
+                    new InstantDamageEffect(2, TargetType.Enemy),
+                    new DoTEffect(1, 3, TargetType.Enemy) },
                 3,
                 TargetType.Enemy,
                 new AreaAffectTemplate(2),
@@ -33,7 +33,7 @@
             Ability result = new Ability(
                 "Regrowth",
                 new List<IEffect> {
-                    new HoTEffect(2, 3) },
+                    new HoTEffect(2, 3, TargetType.Ally) },
                 3,
                 TargetType.Ally,
                 new SingleTargetTemplate(),
@@ -48,7 +48,7 @@
             Ability result = new Ability(
                 "Shoot",
                 new List<IEffect> {
-                    new InstantDamageEffect(4) },
+                    new InstantDamageEffect(4, TargetType.Enemy) },
                 3,
                 TargetType.Enemy,
                 new SingleTargetTemplate(),
@@ -63,7 +63,7 @@
             Ability result = new Ability(
                 "Heal",
                 new List<IEffect> {
-                    new InstantHealEffect(4) },
+                    new InstantHealEffect(4, TargetType.Ally) },
                 3,
                 TargetType.Ally,
                 new SingleTargetTemplate(),

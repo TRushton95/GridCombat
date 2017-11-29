@@ -45,7 +45,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Abilities\Ability.cs" />
-    <Compile Include="Abilities\BaseEffects\BaseEffects.cs" />
+    <Compile Include="Abilities\BaseEffects\AtomicEffects.cs" />
+    <Compile Include="Abilities\Effects\BaseEffect.cs" />
     <Compile Include="Abilities\Effects\DoTEffect.cs" />
     <Compile Include="Abilities\Effects\HoTEffect.cs" />
     <Compile Include="Abilities\Effects\InstantDamageEffect.cs" />

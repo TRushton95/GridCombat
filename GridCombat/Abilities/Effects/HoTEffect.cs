@@ -14,8 +14,8 @@
     {
         #region Constructors
 
-        public HoTEffect(int value, int duration, TargetType targetType)
-            : base(targetType)
+        public HoTEffect(int value, int duration, TargetType targetType, int casterId)
+            : base(targetType, casterId)
         {
             this.Value = value;
             this.Duration = duration;
