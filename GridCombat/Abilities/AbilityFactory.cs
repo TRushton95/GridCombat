@@ -20,7 +20,7 @@
                     new InstantDamageEffect(2, TargetType.Enemy, casterId),
                     new DoTEffect(1, 3, TargetType.Enemy, casterId) },
                 3,
-                TargetType.Enemy,
+                TargetType.Any,
                 new AreaAffectTemplate(2),
                 Textures.FireballIcon,
                 casterId);
